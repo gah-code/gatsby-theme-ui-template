@@ -15,6 +15,8 @@ module.exports = {
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
+    `gatsby-plugin-theme-ui`, // Enables Theme UI
+
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
