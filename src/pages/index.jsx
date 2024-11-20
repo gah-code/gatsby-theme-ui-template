@@ -10,6 +10,7 @@ const IndexPage = () => (
     </p>
     <Showcase />
     <VariantsShowcase />
+    <a href="./posts">post</a>
   </Layout>
 )
 

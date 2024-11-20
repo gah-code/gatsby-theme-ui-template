@@ -1,5 +1,6 @@
 /** @jsxImportSource theme-ui */
 import ColorModeToggle from "./ColorModeToggle"
+import "./layout.css"
 
 const Layout = ({ children }) => {
   return (

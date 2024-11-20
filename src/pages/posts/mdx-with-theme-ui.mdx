@@ -1,0 +1,189 @@
+---
+title: "Setting Up MDX with Theme UI in Gatsby"
+date: "2024-11-20"
+---
+
+import Layout from "../../components/layout"
+import { Container, Paragraph } from "theme-ui"
+
+<Layout>
+
+<Container p={1} >
+
+<Paragraph>Hello World!</Paragraph>
+<Paragraph variant="block" sx={{ fontStyle: 'italic' }}>
+
+# Setting Up MDX with Theme UI in Gatsby
+
+In this post, I'll walk you through setting up MDX with Theme UI for a Gatsby project. We'll cover integrating Theme UI, creating custom color modes, and adding syntax highlighting for code blocks. Let's get started!
+
+</Paragraph>
+
+## Step 1: Install Dependencies
+
+To begin, install the necessary packages:
+
+```bash
+npm install gatsby-plugin-mdx @theme-ui/prism theme-ui
+```
+
+These packages include MDX for writing rich content, Theme UI for styling, and Prism for syntax highlighting.
+
+## Step 2: Update Gatsby Config
+
+Next, configure your `gatsby-config.js` file to use these plugins:
+
+```js
+module.exports = {
+  siteMetadata: {
+    title: `Gatsby Theme UI Starter`,
+    description: `A Gatsby starter with Theme UI and MDX integration.`,
+    author: `@yourname`,
+  },
+  plugins: [
+    `gatsby-plugin-theme-ui`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/src/content/posts`,
+      },
+    },
+  ],
+}
+```
+
+This setup allows Gatsby to read MDX files from `src/content/posts` and use Theme UI for styling.
+
+Centered container
+
+</Container>
+
+## Step 3: Create Your Theme
+
+Define a theme in `src/gatsby-plugin-theme-ui/index.js` to customize styles and color modes:
+
+```js
+export default {
+  config: {
+    initialColorModeName: "light",
+    useCustomProperties: true,
+  },
+  colors: {
+    text: "#000",
+    background: "#fff",
+    primary: "#33e",
+    modes: {
+      dark: {
+        text: "#fff",
+        background: "#000",
+        primary: "#0cf",
+      },
+    },
+  },
+}
+```
+
+This configuration includes a light and dark mode, which can be toggled in your site.
+
+## Step 4: Syntax Highlighting
+
+For code blocks, you can use `@theme-ui/prism` to apply syntax highlighting. Update `styles.js` to include your syntax theme:
+
+```js
+import nightOwl from "@theme-ui/prism/presets/night-owl.json"
+
+export default {
+  code: {
+    ...nightOwl,
+    padding: 3,
+    borderRadius: "default",
+  },
+  pre: {
+    ...nightOwl,
+    padding: 3,
+    borderRadius: "default",
+    overflow: "auto",
+  },
+}
+```
+
+This setup will apply the Night Owl theme to your code blocks.
+
+## Step 5: Create a Post
+
+Create an MDX post in `src/content/posts/hello-world.mdx`:
+
+````mdx
+---
+title: "Hello World"
+date: "2024-11-19"
+---
+
+# Welcome to MDX
+
+This is your first post using Gatsby, MDX, and Theme UI.
+
+```javascript
+console.log("Hello, world!")
+```
+````
+
+````
+
+## Step 6: Create a Post Template
+
+To display your posts, create a template in `src/templates/post.js`:
+
+```jsx
+/** @jsxImportSource theme-ui */
+import React from "react";
+import { graphql } from "gatsby";
+import { MDXProvider } from "@mdx-js/react";
+import Layout from "../components/layout";
+
+const PostTemplate = ({ data, children }) => {
+  const { frontmatter } = data.mdx;
+
+  return (
+    <Layout>
+      <article sx={{ maxWidth: "750px", mx: "auto", p: 4 }}>
+        <header>
+          <h1 sx={{ color: "primary" }}>{frontmatter.title}</h1>
+          <p sx={{ color: "muted" }}>{frontmatter.date}</p>
+        </header>
+        <MDXProvider>{children}</MDXProvider>
+      </article>
+    </Layout>
+  );
+};
+
+export const query = graphql`
+  query PostById($id: String!) {
+    mdx(id: { eq: $id }) {
+      frontmatter {
+        title
+        date(formatString: "MMMM DD, YYYY")
+      }
+    }
+  }
+`;
+
+export default PostTemplate;
+````
+
+This template ensures your posts are styled consistently and wrapped in your layout component.
+
+## Conclusion
+
+That's it! You've successfully set up MDX with Theme UI in Gatsby, added color modes, and implemented syntax highlighting. Now you can easily write rich content for your blog with beautiful themes and code blocks.
+
+Happy coding!
+
+</Layout>
