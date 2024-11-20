@@ -161,9 +161,6 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [`.mdx`, `.md`],
-        defaultLayouts: {
-          post: require.resolve(`./src/templates/post.jsx`), // Custom layout for MDX posts
-        },
       },
     },
 
