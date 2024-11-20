@@ -1,69 +1,83 @@
-/** @jsxImportSource theme-ui */
-
-const VariantsShowcase = () => {
-  return (
-    <div
-      sx={{
-        fontFamily: "body",
-        lineHeight: "body",
-        fontWeight: "body",
-        p: 4,
-        bg: "background",
-        color: "text",
-      }}
-    >
-      <h1 sx={{ variant: "text.heading", color: "primary", mb: 4 }}>
-        Component Variants Showcase
-      </h1>
-
-      {/* Buttons */}
-      <section sx={{ mb: 5 }}>
-        <h2 sx={{ variant: "text.heading", mb: 3 }}>Buttons</h2>
-        <button sx={{ variant: "buttons.primary" }}>Primary Button</button>
-        <button sx={{ variant: "buttons.secondary", ml: 3 }}>
-          Secondary Button
-        </button>
-        <button sx={{ variant: "buttons.close", ml: 3 }}>Close Button</button>
-      </section>
-
-      {/* Cards */}
-      <section sx={{ mb: 5 }}>
-        <h2 sx={{ variant: "text.heading", mb: 3 }}>Cards</h2>
-        <div sx={{ variant: "cards.primary" }}>
-          <p>This is a primary card with default styling.</p>
-        </div>
-        <div sx={{ variant: "cards.accent", mt: 3 }}>
-          <p>This is an accent card with a secondary background.</p>
-        </div>
-      </section>
-
-      {/* Text Variants */}
-      <section sx={{ mb: 5 }}>
-        <h2 sx={{ variant: "text.heading", mb: 3 }}>Text</h2>
-        <p sx={{ variant: "text.caps" }}>
-          This text is uppercase with letter spacing.
-        </p>
-        <p sx={{ variant: "text.heading", mt: 3 }}>
-          This text uses the heading variant.
-        </p>
-      </section>
-
-      {/* Boxes */}
-      <section sx={{ mb: 5 }}>
-        <h2 sx={{ variant: "text.heading", mb: 3 }}>Boxes</h2>
-        <div sx={{ variant: "boxes.shout" }}>
-          This box stands out with bold text.
-        </div>
-      </section>
-
-      {/* Badges */}
-      <section sx={{ mb: 5 }}>
-        <h2 sx={{ variant: "text.heading", mb: 3 }}>Badges</h2>
-        <span sx={{ variant: "badges.primary" }}>Primary Badge</span>
-        <span sx={{ variant: "badges.accent", ml: 3 }}>Accent Badge</span>
-      </section>
-    </div>
-  )
+const variants = {
+  buttons: {
+    primary: {
+      fontWeight: "bold",
+      color: "background",
+      bg: "primary",
+      borderRadius: "default",
+      "&:hover": {
+        bg: "secondary",
+      },
+    },
+    secondary: {
+      fontWeight: "bold",
+      color: "background",
+      bg: "secondary",
+      borderRadius: "default",
+      "&:hover": {
+        bg: "primary",
+      },
+    },
+    close: {
+      color: "text",
+      bg: "transparent",
+      fontSize: 3,
+      "&:hover": {
+        color: "primary",
+      },
+    },
+  },
+  text: {
+    heading: {
+      fontFamily: "heading",
+      fontWeight: "heading",
+      lineHeight: "heading",
+    },
+    caps: {
+      textTransform: "uppercase",
+      letterSpacing: ".2em",
+    },
+    display: {
+      variant: "text.heading",
+      fontSize: [5, 6],
+      fontWeight: "heading",
+      letterSpacing: "-0.02em",
+      mt: 4,
+    },
+  },
+  cards: {
+    primary: {
+      padding: 3,
+      borderRadius: 6,
+      boxShadow: "0 0 8px rgba(0, 0, 0, 0.2)",
+    },
+    accent: {
+      padding: 3,
+      borderRadius: 6,
+      boxShadow: "0 0 8px rgba(0, 0, 0, 0.2)",
+      bg: "secondary",
+      color: "background",
+    },
+  },
+  badges: {
+    primary: {
+      color: "background",
+      bg: "primary",
+    },
+    accent: {
+      color: "background",
+      bg: "secondary",
+    },
+  },
+  boxes: {
+    shout: {
+      fontWeight: "bold",
+      textTransform: "uppercase",
+      bg: "highlight",
+      p: 3,
+      borderRadius: 4,
+    },
+  },
 }
 
-export default VariantsShowcase
+export default variants
