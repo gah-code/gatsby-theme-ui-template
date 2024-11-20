@@ -22,6 +22,7 @@ const theme = {
   forms,
   text,
   styles,
+
   ...variants, // Spread variants into the theme
 }
 

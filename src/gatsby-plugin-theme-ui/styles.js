@@ -1,3 +1,5 @@
+import customSyntaxTheme from "./syntax"
+
 const styles = {
   root: {
     fontFamily: "body",
@@ -41,6 +43,15 @@ const styles = {
     p: 3,
     borderRadius: "default",
     overflow: "auto",
+  },
+  ".highlight": {
+    background: "hsla(50, 100%, 80%, 0.2)", // Custom highlight for code blocks
+  },
+
+  code: {
+    ...customSyntaxTheme, // Include custom syntax styles
+    fontFamily: "monospace",
+    fontSize: 1,
   },
 }
 

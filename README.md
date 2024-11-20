@@ -1,8 +1,6 @@
 # My Gatsby Theme UI Starter
 
-This project is a **Gatsby starter** configured with **Theme UI** to showcase customizable color modes, reusable components, and styled UI elements. It includes a modular theme structure with reusable configurations for colors, typography, spacing, and more.
-
----
+This project is a **Gatsby starter** configured with **Theme UI** to showcase customizable color modes, reusable components, styled UI elements, and syntax highlighting. It includes a modular theme structure with reusable configurations for colors, typography, spacing, and more.
 
 ## Features
 
@@ -12,6 +10,9 @@ This project is a **Gatsby starter** configured with **Theme UI** to showcase cu
 - **Theme UI Integration**:
   - Modular theme structure with dedicated files for colors, typography, and component variants.
   - Easily extendable for future needs.
+- **Syntax Highlighting**:
+  - Powered by **Theme UI** and **@theme-ui/prism**.
+  - Customize syntax themes or use provided presets like Night Owl, Dracula, and more.
 - **Component-Driven Architecture**:
   - Reusable components like `Layout` and `ColorModeToggle` for scalability.
 - **Showcase Page**:
