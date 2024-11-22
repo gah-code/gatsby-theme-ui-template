@@ -87,13 +87,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 /**
  * Example of creating a Deferred Static Generation (DSG) page.
  */
-exports.createPages = async ({ actions }) => {
-  const { createPage } = actions
+// exports.createPages = async ({ actions }) => {
+//   const { createPage } = actions
 
-  createPage({
-    path: "/using-dsg", // URL for the DSG page
-    component: require.resolve("./src/templates/using-dsg.js"), // Template for the DSG page
-    context: {}, // Additional context (if needed)
-    defer: true, // Enable DSG for the page
-  })
-}
+//   createPage({
+//     path: "/using-dsg", // URL for the DSG page
+//     component: require.resolve("./src/templates/using-dsg.js"), // Template for the DSG page
+//     context: {}, // Additional context (if needed)
+//     defer: true, // Enable DSG for the page
+//   })
+// }

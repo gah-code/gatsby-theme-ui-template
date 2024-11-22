@@ -51,13 +51,14 @@ import React from "react"
 import { graphql, Link, navigate } from "gatsby"
 // import { Helmet } from "react-helmet"
 import { SEO } from "../components/seo"
+import Layout from "../components/layout"
 
 const PostsPage = ({ data }) => {
   const posts = data.allMdx.nodes
   // const canonicalUrl = `https://www.example.com${frontmatter.slug}`
 
   return (
-    <div sx={{ padding: 4 }}>
+    <Layout sx={{ padding: 4 }}>
       <button
         onClick={() => navigate(-1)} // Navigate to the previous page
         sx={{
@@ -93,7 +94,7 @@ const PostsPage = ({ data }) => {
           </li>
         ))}
       </ul>
-    </div>
+    </Layout>
   )
 }
 

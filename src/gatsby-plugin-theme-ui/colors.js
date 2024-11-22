@@ -8,16 +8,16 @@ const colors = {
   gray: "#666",
   accent: "#e91e63",
   modes: {
-    dark: {
-      text: "#fff",
-      background: "#121212",
-      primary: "#1e90ff",
-      secondary: "#ff80ab",
-      muted: "#1e1e1e",
-      highlight: "#2b2b2b",
-      gray: "#888",
-      accent: "#ff4081",
-    },
+    // dark: {
+    //   text: "#fff",
+    //   background: "#121212",
+    //   primary: "#1e90ff",
+    //   secondary: "#ff80ab",
+    //   muted: "#1e1e1e",
+    //   highlight: "#2b2b2b",
+    //   gray: "#888",
+    //   accent: "#ff4081",
+    // },
     purple: {
       text: "#ffffff",
       background: "#4a0072",
@@ -27,16 +27,6 @@ const colors = {
       highlight: "#5e007e",
       gray: "#aa99aa",
       accent: "#ff80cb",
-    },
-    pink: {
-      text: "#3e2723",
-      background: "#ff80ab",
-      primary: "#ff4081",
-      secondary: "#f8bbd0",
-      muted: "#ffe4ec",
-      highlight: "#ffd9e5",
-      gray: "#b57584",
-      accent: "#c51162",
     },
     forest: {
       text: "#ffffff",

@@ -57,3 +57,8 @@ export const onRenderBody = ({ setPreBodyComponents }) => {
     />,
   ])
 }
+
+// // Wrap the root element with ThemeProvider
+// export const wrapRootElement = ({ element }) => (
+//   <ThemeUIProvider theme={theme}>{element}</ThemeUIProvider>
+// )

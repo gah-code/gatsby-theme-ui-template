@@ -1,13 +1,13 @@
 import { render, screen, fireEvent } from "@testing-library/react"
-import { ThemeProvider } from "theme-ui"
+import { ThemeUIProvider } from "theme-ui"
 import theme from "../../gatsby-plugin-theme-ui"
 import ColorModeToggle from "../ColorModeToggle"
 
 test("cycles through color modes using the dropdown", () => {
   render(
-    <ThemeProvider theme={theme}>
+    <ThemeUIProvider theme={theme}>
       <ColorModeToggle />
-    </ThemeProvider>
+    </ThemeUIProvider>
   )
 
   // Find the select dropdown

@@ -17,8 +17,10 @@ module.exports = {
   },
   plugins: [
     // Theme UI plugin for styling
+    "gatsby-plugin-minify-html",
     `gatsby-plugin-theme-ui`,
     `gatsby-plugin-react-helmet`,
+
     // MDX plugin for handling .mdx and .md files
     {
       resolve: `gatsby-plugin-mdx`,
@@ -26,11 +28,21 @@ module.exports = {
         extensions: [`.mdx`, `.md`],
       },
     },
+
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
         siteUrl: `https://www.example.com`, // Ensure this matches your site's URL
         stripQueryString: true, // Optional: removes query strings from canonical URLs
+      },
+    },
+    {
+      resolve: "gatsby-plugin-purgecss",
+      options: {
+        printRejected: true, // Print removed selectors
+        develop: false, // Enable while using `gatsby develop`
+        tailwind: true, // Enable if using Tailwind CSS
+        ignore: ["/ignored.css"], // Files to ignore
       },
     },
 
