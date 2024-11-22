@@ -2,6 +2,8 @@
 import Layout from "../components/layout"
 import Showcase from "../components/showcase"
 import VariantsShowcase from "../components/variants"
+import { SEO } from "../components/seo"
+
 const IndexPage = () => (
   <Layout>
     <h1 sx={{ color: "primary" }}>Welcome to the Multi-Mode Theme</h1>
@@ -15,3 +17,7 @@ const IndexPage = () => (
 )
 
 export default IndexPage
+
+export const Head = () => (
+  <SEO title="Home Page" description="Home page" pathname="/" />
+)

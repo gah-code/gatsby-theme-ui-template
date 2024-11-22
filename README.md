@@ -25,41 +25,55 @@ This project is a **Gatsby starter** configured with **Theme UI** to showcase cu
 ## Folder Structure
 
 ```plaintext
-gatsby-theme-ui-starter/
-├── .gitignore
-├── .eslintrc.js
-├── babel.config.js
-├── gatsby-config.js
-├── jest.config.js
-├── package.json
+gatsby-theme-ui-template/
+├── gatsby-config.js        # Updated to source MDX posts from `/src/posts/`
+├── gatsby-node.js          # Dynamically creates individual post pages
 ├── src/
-│   ├── components/
-│   │   ├── ColorModeToggle.js  # Handles color mode switching
-│   │   ├── Layout.js           # Wraps pages with consistent layout
-│   │   └── __tests__/          # Jest tests for components
-│   │       └── Layout.test.js
-│   ├── gatsby-plugin-theme-ui/
-│   │   ├── colors.js           # Colors and color modes
-│   │   ├── typography.js       # Fonts, font sizes, weights, and line heights
-│   │   ├── space.js            # Spacing (margins, paddings)
-│   │   ├── radii.js            # Border radius styles
-│   │   ├── buttons.js          # Button styles and variants
-│   │   ├── forms.js            # Form styles (inputs, selects, etc.)
-│   │   ├── text.js             # Text variants
-│   │   ├── variants.js         # All component variants
-│   │   ├── styles.js           # Global styles (root, headings, links, etc.)
-│   │   └── index.js            # Combines all theme files into a single export
 │   ├── pages/
-│   │   ├── about.js            # About page
-│   │   ├── index.js            # Home page
-│   │   └── showcase.js         # Theme showcase page
-│   ├── styles/
-│   │   ├── global.css          # Global CSS resets and overrides
-│   │   └── utils.css           # Utility classes for quick styling
-│   └── utils/
-│       ├── colorMode.js        # Utility functions for color mode management
-│       └── helpers.js          # Helper functions for various tasks
-└── README.md
+│   │   ├── index.jsx        # Homepage
+│   │   ├── posts.jsx        # Post listing page
+│   │   ├── about.jsx        # About page
+│   │   ├── showcase.jsx     # Theme showcase page
+│   │   ├── page-2.jsx       # Additional example page
+│   │   ├── using-dsg.jsx    # Deferred Static Generation example page
+│   │   ├── using-ssr.jsx    # Server-Side Rendering example page
+│   │   ├── using-typescript.tsx # TypeScript example page
+│   └── 404.jsx              # Custom 404 page
+│
+│   ├── posts/               # MDX blog posts
+│   │   ├── analyzing-reddit-comments-with-python.mdx
+│   │   ├── mdx-with-theme-ui.mdx
+│   │   ├── my-first-post.mdx
+│
+│   ├── templates/           # Templates for dynamically created pages
+│   │   └── post.jsx         # Individual post template
+│
+│   ├── components/          # Reusable components
+│   │   ├── Layout.jsx       # Shared layout for all pages
+│   │   ├── Header.jsx       # Page header
+│   │   ├── Footer.jsx       # Page footer
+│   │   ├── ColorModeToggle.jsx # Theme UI color mode switcher
+│   │   ├── __tests__/       # Jest tests for components
+│   │   │   └── Layout.test.js
+│
+│   ├── gatsby-plugin-theme-ui/
+│   │   ├── colors.js        # Colors and color modes
+│   │   ├── typography.js    # Fonts, sizes, weights, line heights
+│   │   ├── space.js         # Spacing (margins, paddings)
+│   │   ├── radii.js         # Border radius styles
+│   │   ├── buttons.js       # Button styles and variants
+│   │   ├── forms.js         # Form styles (inputs, selects, etc.)
+│   │   ├── text.js          # Text variants
+│   │   ├── variants.js      # Component variants (e.g., cards, badges)
+│   │   ├── styles.js        # Global styles (root, headings, links, etc.)
+│   │   └── index.js         # Combines all theme files into a single export
+│
+│   └── styles/
+│       ├── global.css       # Global CSS resets and overrides
+│       └── utils.css        # Utility classes for quick styling
+│
+└── static/                  # Static assets (images, icons, etc.)
+
 ```
 
 ---
@@ -207,6 +221,29 @@ Example test file: `src/components/__tests__/Layout.test.js`
 
 ---
 
+--
+
+### Example File Contents
+
+#### **`src/pages/posts.jsx`**
+
+The main blog listing page.
+
+#### **`src/templates/post.jsx`**
+
+Renders individual blog posts.
+
+#### **Example Post (`src/posts/mdx-with-theme-ui.mdx`)**
+
+```mdx
+---
+title: "MDX with Theme UI"
+excerpt: "Learn how to use MDX with Theme UI to create a customizable and powerful blogging experience."
+date: "2024-11-21"
+slug: "mdx-with-theme-ui"
+---
+
+
 ## Customization
 
 ### Components
@@ -252,5 +289,8 @@ Created by Gilberto Alejandro Haro
 - [Gatsby](https://www.gatsbyjs.com/)
 - [Theme UI](https://theme-ui.com/)
 - [Testing Library](https://testing-library.com/)
+
+---
+
 
 ---
