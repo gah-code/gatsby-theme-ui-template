@@ -2,8 +2,6 @@ import Layout from "../components/layout"
 import Showcase from "../components/showcase"
 import VariantsShowcase from "../components/variants"
 import { SEO } from "../components/seo"
-// import { ThemeUIProvider } from "theme-ui"
-// import theme from "../gatsby-plugin-theme-ui"
 
 const IndexPage = () => (
   // <ThemeUIProvider theme={theme}>

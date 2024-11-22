@@ -54,34 +54,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       context: { id: post.id },
     })
   })
-  // const result = await graphql(`
-  //   query {
-  //     allMdx {
-  //       nodes {
-  //         id
-  //         fields {
-  //           slug
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
-
-  // if (result.errors) {
-  //   reporter.panicOnBuild("Error loading MDX posts", result.errors)
-  //   return
-  // }
-
-  // const posts = result.data.allMdx.nodes
-  // const postTemplate = path.resolve("./src/templates/post.jsx")
-
-  // posts.forEach(post => {
-  //   createPage({
-  //     path: `/posts${post.fields.slug}`,
-  //     component: postTemplate,
-  //     context: { id: post.id },
-  //   })
-  // })
 }
 
 /**

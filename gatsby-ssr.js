@@ -8,19 +8,9 @@
  * @type {import('gatsby').GatsbySSR['onRenderBody']}
  */
 
-// import React from "react"
-// import { renderToString } from "react-dom/server"
-// import createEmotionServer from "@emotion/server/create-instance"
-// import createCache from "@emotion/cache"
-// exports.onRenderBody = ({ setHtmlAttributes }) => {
-//   setHtmlAttributes({ lang: `en` })
-// }
-
 import React from "react"
 import { renderToString } from "react-dom/server"
 import createEmotionServer from "@emotion/server/create-instance"
-// import { ThemeUIProvider } from "theme-ui"
-// import theme from "./src/gatsby-plugin-theme-ui"
 
 import createCache from "@emotion/cache"
 
@@ -59,12 +49,3 @@ export const onRenderBody = ({ setPreBodyComponents }) => {
     />,
   ])
 }
-
-// // Wrap the root element with ThemeProvider
-// export const wrapRootElement = ({ element }) => (
-//   <ThemeUIProvider theme={theme}>{element}</ThemeUIProvider>
-// )
-
-// export const wrapRootElement = ({ element }) => (
-//   <ThemeUIProvider theme={theme}>{element}</ThemeUIProvider>
-// )
