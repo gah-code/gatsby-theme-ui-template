@@ -200,21 +200,54 @@
 import { useColorMode } from "theme-ui"
 import { useMemo } from "react"
 
-const modes = ["light", "purple", "forest"]
+const modes = ["light", "dark", "forest"]
+
+// const ColorModeToggle = props => {
+//   const [mode, setMode] = useColorMode()
+
+//   // Memoize dropdown options
+//   const modeOptions = useMemo(
+//     () =>
+//       modes.map(themeMode => (
+//         <option key={themeMode} value={themeMode}>
+//           {themeMode.charAt(0).toUpperCase() + themeMode.slice(1)}
+//         </option>
+//       )),
+//     [] // Add `modes` as dependency if it may change
+//   )
+//   console.log("Current mode:", mode)
+
+//   return (
+//     <div sx={{ textAlign: "center", my: 3 }}>
+//       <label htmlFor="color-mode-selector" sx={{ display: "block", mb: 2 }}>
+//         Current Theme: <strong>{mode}</strong>
+//       </label>
+//       <select
+//         id="color-mode-selector"
+//         sx={{
+//           variant: "forms.select",
+//           border: "1px solid",
+//           borderColor: "primary",
+//           bg: "background",
+//           color: "text",
+//           cursor: "pointer",
+//         }}
+//         value={mode}
+//         onChange={e => setMode(e.target.value)}
+//       >
+//         {modeOptions}
+//       </select>
+//     </div>
+//   )
+// }
 
 const ColorModeToggle = () => {
   const [mode, setMode] = useColorMode()
 
-  // Memoize dropdown options
-  const modeOptions = useMemo(
-    () =>
-      modes.map(themeMode => (
-        <option key={themeMode} value={themeMode}>
-          {themeMode.charAt(0).toUpperCase() + themeMode.slice(1)}
-        </option>
-      )),
-    []
-  )
+  const handleChange = e => {
+    const newMode = e.target.value
+    setMode(newMode)
+  }
 
   return (
     <div sx={{ textAlign: "center", my: 3 }}>
@@ -232,9 +265,13 @@ const ColorModeToggle = () => {
           cursor: "pointer",
         }}
         value={mode}
-        onChange={e => setMode(e.target.value)}
+        onChange={handleChange}
       >
-        {modeOptions}
+        {modes.map(themeMode => (
+          <option key={themeMode} value={themeMode}>
+            {themeMode.charAt(0).toUpperCase() + themeMode.slice(1)}
+          </option>
+        ))}
       </select>
     </div>
   )

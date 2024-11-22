@@ -4,15 +4,19 @@ import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { SEO } from "../components/seo"
 
+import Layout from "../components/layout"
+
 const PostTemplate = ({ data }) => {
   const { frontmatter, body } = data.mdx
 
   return (
-    <article sx={{ padding: 4 }}>
-      <h1 sx={{ fontSize: 5, marginBottom: 3 }}>{frontmatter.title}</h1>
-      <p sx={{ color: "textMuted", marginBottom: 4 }}>{frontmatter.date}</p>
-      <MDXRenderer>{body}</MDXRenderer>
-    </article>
+    <Layout>
+      <article sx={{ padding: 4 }}>
+        <h1 sx={{ fontSize: 5, marginBottom: 3 }}>{frontmatter.title}</h1>
+        <p sx={{ color: "textMuted", marginBottom: 4 }}>{frontmatter.date}</p>
+        <MDXRenderer>{body}</MDXRenderer>
+      </article>
+    </Layout>
   )
 }
 

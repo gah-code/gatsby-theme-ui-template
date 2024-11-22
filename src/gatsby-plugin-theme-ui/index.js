@@ -15,6 +15,7 @@ const theme = {
     initialColorModeName: "light",
   },
   colors,
+
   ...typography,
   space,
   radii,

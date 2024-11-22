@@ -19,6 +19,9 @@
 import React from "react"
 import { renderToString } from "react-dom/server"
 import createEmotionServer from "@emotion/server/create-instance"
+// import { ThemeUIProvider } from "theme-ui"
+// import theme from "./src/gatsby-plugin-theme-ui"
+
 import createCache from "@emotion/cache"
 
 export const replaceRenderer = ({ bodyComponent, setHeadComponents }) => {
@@ -45,20 +48,23 @@ export const onRenderBody = ({ setPreBodyComponents }) => {
       key="init-color-mode"
       dangerouslySetInnerHTML={{
         __html: `
-          (function() {
-            try {
-              var mode = localStorage.getItem('theme-ui-color-mode');
-              if (!mode) return;
-              document.documentElement.setAttribute('data-theme-ui-color-mode', mode);
-            } catch (e) {}
-          })();
-        `,
+      (function() {
+        try {
+          var mode = localStorage.getItem('theme-ui-color-mode') || 'light';
+          document.documentElement.setAttribute('data-theme-ui-color-mode', mode);
+        } catch (e) {}
+      })();
+    `,
       }}
     />,
   ])
 }
 
 // // Wrap the root element with ThemeProvider
+// export const wrapRootElement = ({ element }) => (
+//   <ThemeUIProvider theme={theme}>{element}</ThemeUIProvider>
+// )
+
 // export const wrapRootElement = ({ element }) => (
 //   <ThemeUIProvider theme={theme}>{element}</ThemeUIProvider>
 // )
