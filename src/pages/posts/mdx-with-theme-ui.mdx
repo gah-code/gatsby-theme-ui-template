@@ -5,14 +5,14 @@ slug: "mdx-with-theme-ui"
 excerpt: "This is an example excerpt."
 ---
 
-import Layout from "../../components/layout"
-import { Container, Paragraph } from "theme-ui"
+import Layout from "../../components/layout/Layout"
+import Container from "../../components/Container"
+import { Paragraph } from "theme-ui"
 
 <Layout>
 
-<Container p={1} >
+<Container>
 
-<Paragraph>Hello World!</Paragraph>
 <Paragraph variant="block" sx={{ fontStyle: 'italic' }}>
 
 # Setting Up MDX with Theme UI in Gatsby
@@ -64,8 +64,6 @@ module.exports = {
 This setup allows Gatsby to read MDX files from `src/content/posts` and use Theme UI for styling.
 
 Centered container
-
-</Container>
 
 ## Step 3: Create Your Theme
 
@@ -187,5 +185,7 @@ This template ensures your posts are styled consistently and wrapped in your lay
 That's it! You've successfully set up MDX with Theme UI in Gatsby, added color modes, and implemented syntax highlighting. Now you can easily write rich content for your blog with beautiful themes and code blocks.
 
 Happy coding!
+
+</Container>
 
 </Layout>

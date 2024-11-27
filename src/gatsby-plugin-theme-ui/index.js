@@ -25,6 +25,17 @@ const theme = {
   styles,
 
   ...variants, // Spread variants into the theme
+  breakpoints: ["32em", "48em", "64em", "80em"],
+
+  sizes: {
+    container: "900px", // Default container width
+    full: "100%",
+    narrow: "695px",
+    wide: "950px",
+    content: "80%", // Common content width
+    sidebar: "300px", // Fixed sidebar size
+    card: "320px", // Card component size
+  },
 }
 
 export default theme

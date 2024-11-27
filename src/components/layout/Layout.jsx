@@ -1,10 +1,14 @@
 /** @jsxImportSource theme-ui */
 import { Profiler, memo } from "react"
-import ColorModeToggle from "./ColorModeToggle"
+import ColorModeToggle from "../ColorModeToggle"
 import { debounce } from "lodash"
-import "../styles/global.css"
+import "../../styles/global.css"
 import { ThemeUIProvider } from "theme-ui"
-import theme from "../gatsby-plugin-theme-ui"
+import theme from "../../gatsby-plugin-theme-ui"
+import GlobalStyles from "./GlobalStyles"
+import Header from "../ui/Header"
+import { Box } from "theme-ui"
+import Main from "../ui/Main"
 
 // Debounced profiler callback
 const debouncedRenderCallback = debounce((id, phase, actualDuration) => {
@@ -15,7 +19,9 @@ const Layout = ({ children, themeMode }) => {
   return (
     <Profiler id="ColorModeToggle" onRender={debouncedRenderCallback}>
       <ThemeUIProvider theme={theme}>
-        <div
+        <GlobalStyles />
+
+        <Box
           sx={{
             fontFamily: "body",
             bg: "background",
@@ -25,18 +31,11 @@ const Layout = ({ children, themeMode }) => {
             flexDirection: "column",
           }}
         >
-          <header
-            sx={{
-              bg: "primary",
-              color: "background",
-              p: 3,
-              textAlign: "center",
-            }}
-          >
-            <ColorModeToggle value={themeMode} />
-          </header>
-          <main sx={{ p: 4, flex: 1 }}>{children}</main>
-        </div>
+          <ColorModeToggle value={themeMode} />
+
+          <Header />
+          <Main>{children}</Main>
+        </Box>
       </ThemeUIProvider>
     </Profiler>
   )

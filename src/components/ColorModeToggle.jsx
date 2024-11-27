@@ -2,7 +2,7 @@
 import { useColorMode } from "theme-ui"
 // import { useMemo } from "react"
 
-const modes = ["light", "dark", "forest"]
+const modes = ["light", "dark", "forest", "purple"]
 
 const ColorModeToggle = () => {
   const [mode, setMode] = useColorMode()

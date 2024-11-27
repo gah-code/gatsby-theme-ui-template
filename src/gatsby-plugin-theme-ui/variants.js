@@ -78,6 +78,43 @@ const variants = {
       borderRadius: 4,
     },
   },
+  grid: {
+    default: {
+      display: "grid",
+      gridTemplateColumns: ["1fr", "1fr", "repeat(2, 1fr)", "repeat(3, 1fr)"], // 1 column on mobile, 2 on tablets, 3 on desktops
+      gap: 3, // Use the `space` scale
+      p: 2,
+    },
+    twoColumn: {
+      display: "grid",
+      gridTemplateColumns: ["1fr", "1fr", "repeat(2, 1fr)"], // 1 column on mobile, 2 on larger screens
+      gap: 3,
+      p: 3,
+    },
+    threeColumn: {
+      display: "grid",
+      gridTemplateColumns: ["1fr", "repeat(2, 1fr)", "repeat(3, 1fr)"], // 1 column on mobile, 2 on tablets, 3 on desktops
+      gap: 4,
+      p: 3,
+    },
+    fourColumn: {
+      display: "grid",
+      gridTemplateColumns: ["1fr", "repeat(2, 1fr)", "repeat(4, 1fr)"], // 1 column on mobile, 2 on tablets, 4 on desktops
+      gap: 3,
+      p: 4,
+    },
+    sixColumn: {
+      display: "grid",
+      gridTemplateColumns: [
+        "1fr",
+        "repeat(2, 1fr)",
+        "repeat(3, 1fr)",
+        "repeat(6, 1fr)",
+      ], // 1 column on mobile, 2 on tablets, 3 on laptops, 6 on desktops
+      gap: 3,
+      p: 4,
+    },
+  },
 }
 
 export default variants

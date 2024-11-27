@@ -1,19 +1,39 @@
 /** @jsxImportSource theme-ui */
+// import { Grid } from "../components/Grid"
+// import theme from "../gatsby-plugin-theme-ui"
+// import { Grid, Box } from "theme-ui"
+
+// const Grid = {
+//   grids: {
+//     default: {
+//       display: "grid",
+//       gap: 3,
+//       gridTemplateColumns: "repeat(2, 1fr)",
+//     },
+//     responsive: {
+//       display: "grid",
+//       gap: [2, 3],
+//       gridTemplateColumns: ["1fr", "repeat(2, 1fr)", "repeat(4, 1fr)"],
+//     },
+//   },
+// }
 
 const TypographyShowcase = () => (
-  <section>
-    <h2 sx={{ variant: "text.heading", color: "secondary" }}>Typography</h2>
-    <p>
-      This is a body text example styled with <code>fontFamily</code> and{" "}
-      <code>lineHeight</code> from the theme.
-    </p>
-    <p sx={{ fontWeight: "bold", mt: 3 }}>Bold text example</p>
+  <>
+    <section>
+      <h2 sx={{ variant: "text.heading", color: "secondary" }}>Typography</h2>
+      <p>
+        This is a body text example styled with <code>fontFamily</code> and{" "}
+        <code>lineHeight</code> from the theme.
+      </p>
+      <p sx={{ fontWeight: "bold", mt: 3 }}>Bold text example</p>
 
-    <h3 sx={{ mt: 4, color: "accent" }}>Headings</h3>
-    <h1 sx={{ variant: "text.heading", color: "primary" }}>H1 Heading</h1>
-    <h2 sx={{ variant: "text.heading", color: "secondary" }}>H2 Heading</h2>
-    <h3 sx={{ variant: "text.heading", color: "gray" }}>H3 Heading</h3>
-  </section>
+      <h3 sx={{ mt: 4, color: "accent" }}>Headings</h3>
+      <h1 sx={{ variant: "text.heading", color: "primary" }}>H1 Heading</h1>
+      <h2 sx={{ variant: "text.heading", color: "secondary" }}>H2 Heading</h2>
+      <h3 sx={{ variant: "text.heading", color: "gray" }}>H3 Heading</h3>
+    </section>{" "}
+  </>
 )
 
 const ButtonsShowcase = () => (

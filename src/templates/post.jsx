@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { SEO } from "../components/seo"
 
-import Layout from "../components/layout"
+import Layout from "../components/layout/Layout"
 
 const PostTemplate = ({ data }) => {
   const { frontmatter, body } = data.mdx

@@ -55,6 +55,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   })
 }
+// gatsby-node.js
+exports.createPages = async ({ actions }) => {
+  const { createPage } = actions
+
+  createPage({
+    path: "/grid-variants",
+    component: require.resolve("./src/pages/GridVariantsPage.jsx"),
+  })
+}
 
 /**
  * Example of creating a Deferred Static Generation (DSG) page.

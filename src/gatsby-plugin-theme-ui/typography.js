@@ -19,6 +19,22 @@ const typography = {
     heading: "-0.05em",
     caps: "0.1em",
   },
+  links: {
+    nav: {
+      px: 3,
+      py: 2,
+      textTransform: "uppercase",
+      letterSpacing: "0.1em",
+      color: "background",
+      "&:hover": {
+        color: "secondary",
+      },
+      "&.active": {
+        borderBottom: "2px solid",
+        borderColor: "secondary",
+      },
+    },
+  },
 }
 
 export default typography
