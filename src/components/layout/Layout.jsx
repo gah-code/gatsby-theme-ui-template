@@ -31,9 +31,11 @@ const Layout = ({ children, themeMode }) => {
             flexDirection: "column",
           }}
         >
-          <ColorModeToggle value={themeMode} />
+          {/* <ColorModeToggle value={themeMode} /> */}
 
-          <Header />
+          {/* <Header /> */}
+          <Header themeMode={themeMode} />
+
           <Main>{children}</Main>
         </Box>
       </ThemeUIProvider>

@@ -18,22 +18,26 @@
 //   },
 // }
 
+import { Box } from "theme-ui"
+import Heading from "./util/Heading"
+// import theme from "../gatsby-plugin-theme-ui"
+
 const TypographyShowcase = () => (
-  <>
+  <Box>
     <section>
-      <h2 sx={{ variant: "text.heading", color: "secondary" }}>Typography</h2>
+      <Heading as="h1">Dynamic H1</Heading>
+      <Heading as="h2">Dynamic H2</Heading>
+      <Heading as="h3">Dynamic H3</Heading>
+      <Heading as="h4">Dynamic H4</Heading>
+      <Heading as="h5">Dynamic H5</Heading>
+
       <p>
         This is a body text example styled with <code>fontFamily</code> and{" "}
         <code>lineHeight</code> from the theme.
       </p>
       <p sx={{ fontWeight: "bold", mt: 3 }}>Bold text example</p>
-
-      <h3 sx={{ mt: 4, color: "accent" }}>Headings</h3>
-      <h1 sx={{ variant: "text.heading", color: "primary" }}>H1 Heading</h1>
-      <h2 sx={{ variant: "text.heading", color: "secondary" }}>H2 Heading</h2>
-      <h3 sx={{ variant: "text.heading", color: "gray" }}>H3 Heading</h3>
     </section>{" "}
-  </>
+  </Box>
 )
 
 const ButtonsShowcase = () => (

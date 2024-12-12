@@ -1,3 +1,29 @@
+---
+title: "Dynamic heading components enable you to create reusable"
+date: "2024-12-12"
+slug: "dynamic-heading-components"
+excerpt: "This is an example excerpt!!"
+---
+
+import Layout from "../../components/layout/Layout"
+import Container from "../../components/Container"
+import { Paragraph } from "theme-ui"
+
+<Layout>
+
+<Container>
+
+{/* <Paragraph variant="block" sx={{ fontStyle: 'italic' }}> */}
+
+# Dynamic heading components enable you to create reusable
+
+## Theme Configuration
+
+The following example demonstrates a custom `styles` object configured for headings and other elements. These styles are part of the Theme UI theme:
+
+## Implementing a Dynamic Heading Component
+
+```javascript
 import customSyntaxTheme from "./syntax"
 
 const styles = {
@@ -7,7 +33,7 @@ const styles = {
     fontWeight: "body",
   },
   h1: {
-    fontSize: [48, 64],
+    fontSize: [48],
     fontFamily: "heading",
     fontWeight: "heading",
     lineHeight: "medium",
@@ -16,7 +42,7 @@ const styles = {
     mb: 4,
   },
   h2: {
-    fontSize: [32, 48],
+    fontSize: [32],
     fontFamily: "heading",
     fontWeight: "heading",
     lineHeight: "medium",
@@ -60,7 +86,6 @@ const styles = {
   ".highlight": {
     background: "hsla(50, 100%, 80%, 0.2)", // Custom highlight for code blocks
   },
-
   code: {
     ...customSyntaxTheme, // Include custom syntax styles
     fontFamily: "monospace",
@@ -69,3 +94,8 @@ const styles = {
 }
 
 export default styles
+```
+
+</Container>
+
+</Layout>

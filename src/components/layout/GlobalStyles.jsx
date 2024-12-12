@@ -36,6 +36,7 @@ const GlobalStyles = () => (
         font-family: ${theme.fonts.body};
         background-color: ${theme.colors.background};
         color: ${theme.colors.text};
+        overflow-x: hidden;
       }
 
       img,
