@@ -14,6 +14,19 @@ module.exports = {
     twitterUsername: `@gatsbyjs`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
     image: `/gatsby-icon.png`,
+    footerLinks: [
+      { name: "Home", path: "/" },
+      { name: "Posts", path: "/posts" },
+      { name: "About", path: "/about" },
+    ],
+    socialLinks: [
+      { name: "GitHub", url: "https://github.com/gah-code" },
+      {
+        name: "LinkedIn",
+        url: "https://www.linkedin.com/in/gilberto-haro-2b108222b/",
+      },
+      { name: "CodePen", url: "https://codepen.io/your-username" },
+    ],
   },
   plugins: [
     // Theme UI plugin for styling

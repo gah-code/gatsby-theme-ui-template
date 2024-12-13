@@ -9,6 +9,7 @@ import GlobalStyles from "./GlobalStyles"
 import Header from "../ui/Header"
 import { Box } from "theme-ui"
 import Main from "../ui/Main"
+import Footer from "../ui/Footer"
 
 // Debounced profiler callback
 const debouncedRenderCallback = debounce((id, phase, actualDuration) => {
@@ -37,6 +38,8 @@ const Layout = ({ children, themeMode }) => {
           <Header themeMode={themeMode} />
 
           <Main>{children}</Main>
+
+          <Footer />
         </Box>
       </ThemeUIProvider>
     </Profiler>

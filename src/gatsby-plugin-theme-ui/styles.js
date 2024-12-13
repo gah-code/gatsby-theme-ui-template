@@ -7,7 +7,7 @@ const styles = {
     fontWeight: "body",
   },
   h1: {
-    fontSize: [48, 64],
+    fontSize: [48],
     fontFamily: "heading",
     fontWeight: "heading",
     lineHeight: "medium",
@@ -16,7 +16,7 @@ const styles = {
     mb: 4,
   },
   h2: {
-    fontSize: [32, 48],
+    fontSize: [32],
     fontFamily: "heading",
     fontWeight: "heading",
     lineHeight: "medium",
@@ -66,6 +66,20 @@ const styles = {
     fontFamily: "monospace",
     fontSize: 1,
   },
+  footer: {
+    bg: "primary",
+    color: "background",
+    a: {
+      color: "background",
+      textDecoration: "none",
+      "&:hover": {
+        color: "secondary",
+      },
+    },
+  },
+  // other styles...
+
+  // other theme config...
 }
 
 export default styles

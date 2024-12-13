@@ -32,6 +32,8 @@ const typography = {
       "&.active": {
         borderBottom: "2px solid",
         borderColor: "secondary",
+        color: "muted", // Your desired active color
+        bg: "transparent",
       },
     },
   },
