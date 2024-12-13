@@ -1,7 +1,7 @@
 {
   "name": "gatsby-starter-default",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "My Gatsby template is configured with Theme UI showcasing multi-mode color themes, MDX integration, and scalable component architecture.",
   "version": "0.1.0",
   "author": "Gilberto A Haro",
   "dependencies": {

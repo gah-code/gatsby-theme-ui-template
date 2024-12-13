@@ -127,7 +127,7 @@ const IndexPage = () => (
       <BreakpointShowcase />
       <Showcase />
       <VariantsShowcase />
-      <a href="./posts">post</a>
+
       <br />
       <a href="./GridVariantsPage">Grid Pattern</a>
     </Box>
