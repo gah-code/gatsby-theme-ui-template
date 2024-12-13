@@ -8,11 +8,11 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Theme UI Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter.`,
+    title: `Multi-Mode Themes `,
+    description: `Seamlessly switch between color modes, experiment with different typography scales, and enjoy a unified design system that drives all your sites components.`,
     author: `@gatsbyjs`,
     twitterUsername: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    siteUrl: `https://gatsby-ui-theme.netlify.app`,
     image: `/gatsby-icon.png`,
     footerLinks: [
       { name: "Home", path: "/" },
@@ -45,7 +45,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://www.example.com`, // Ensure this matches your site's URL
+        siteUrl: `https://gatsby-ui-theme.netlify.app`, // Ensure this matches your site's URL
         stripQueryString: true, // Optional: removes query strings from canonical URLs
       },
     },
