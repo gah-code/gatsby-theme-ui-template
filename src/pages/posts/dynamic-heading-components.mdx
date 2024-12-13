@@ -3,9 +3,11 @@ title: "Dynamic heading components enable you to create reusable"
 date: "2024-12-12"
 slug: "dynamic-heading-components"
 excerpt: "This is an example excerpt!!"
+description: "test"
 ---
 
 import Layout from "../../components/layout/Layout"
+import { SEO } from "../../components/seo"
 import Container from "../../components/Container"
 import { Paragraph } from "theme-ui"
 
@@ -99,3 +101,11 @@ export default styles
 </Container>
 
 </Layout>
+
+export const Head = () => (
+  <SEO
+    title="Post | Dynamic heading components enable you to create reusable"
+    description="Dynamic header leverages Theme UI's responsive styling and dynamic components to create a header section that adapts to different screen sizes, color modes, and user interactions."
+    pathname="/dynamic-heading-components"
+  />
+)

@@ -138,5 +138,9 @@ const IndexPage = () => (
 export default IndexPage
 
 export const Head = () => (
-  <SEO title="Home Page" description="Home page" pathname="/" />
+  <SEO
+    title="Home Page | Multi-Mode Themes"
+    description="Seamlessly switch between color modes, experiment with different typography scales, and enjoy a unified design system that drives all your sites components."
+    pathname="/"
+  />
 )

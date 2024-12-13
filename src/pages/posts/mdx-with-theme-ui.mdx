@@ -6,6 +6,7 @@ excerpt: "This is an example excerpt."
 ---
 
 import Layout from "../../components/layout/Layout"
+import { SEO } from "../../components/seo"
 import Container from "../../components/Container"
 import { Paragraph } from "theme-ui"
 
@@ -189,3 +190,11 @@ Happy coding!
 </Container>
 
 </Layout>
+
+export const Head = () => (
+  <SEO
+    title="Post | Setting Up MDX with Theme UI in Gatsby"
+    description="Integrating Theme UI, creating custom color modes, and adding syntax highlighting for code blocks"
+    pathname="/mdx-with-theme-ui"
+  />
+)
