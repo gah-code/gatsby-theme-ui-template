@@ -51,7 +51,7 @@ const AboutPage = () => (
       >
         About the Template
       </Heading>
-      <Heading as="h2" variant="display">
+      {/* <Heading as="h2" variant="display">
         Display Heading
       </Heading>
       <Heading as="h1" variant="hero">
@@ -110,7 +110,7 @@ const AboutPage = () => (
           <h2>Container Section</h2>
           <p>This section is styled with the "container" width.</p>
         </Section>
-      </>
+      </> */}
     </Box>
   </Layout>
 )
