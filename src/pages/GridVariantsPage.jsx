@@ -1,25 +1,3 @@
-// import { Grid, Box } from "theme-ui"
-
-// const GridExample = () => (
-//   <Grid sx={{ variant: "grid.fourColumn" }}>
-//     {[...Array(8)].map((_, i) => (
-//       <Box
-//         key={i}
-//         sx={{
-//           bg: "muted",
-//           p: 3,
-//           borderRadius: "8px",
-//           textAlign: "center",
-//         }}
-//       >
-//         Item {i + 1}
-//       </Box>
-//     ))}
-//   </Grid>
-// )
-
-// export default GridExample
-
 /** @jsxImportSource theme-ui */
 import { Grid, Box, Heading, Text, Image, Button } from "theme-ui"
 import Layout from "../components/layout/Layout"

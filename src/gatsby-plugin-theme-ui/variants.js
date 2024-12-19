@@ -36,6 +36,7 @@ const variants = {
       fontFamily: "heading",
       fontWeight: "heading",
       lineHeight: "heading",
+      fontSize: [5, 6, 7], // Adjust for breakpoints (40px, 48px, 64px)
     },
     caps: {
       textTransform: "uppercase",

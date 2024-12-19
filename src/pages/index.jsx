@@ -13,31 +13,17 @@ const IndexPage = () => (
   <Layout>
     <Box sx={{ maxWidth: "900px", mx: "auto", p: [3, 4] }}>
       <Hero
-        title="Elevate Your UI with Multi-Mode Themes & Dynamic Styling"
-        subtitle="Emphasize benefits like accessibility, scalability, and ease of customization"
+        title="Multi-Mode UI Theme : The Design Graph Starter Template"
+        subtitle="Elevate Your UI, emphasize benefits like accessibility, scalability, and ease of customization"
         primaryLink={{ label: "Get Started", href: "/setup-guide" }}
         secondaryLink={{ label: "Explore Features", href: "#features" }}
         bg="muted"
         color="text"
       />
 
-      <Section
-      // sx={{
-      //   display: "flex",
-      //   flexDirection: "column",
-      //   alignItems: "center", // Horizontal alignment
-      //   justifyContent: "center", // Vertical alignment
-      //   // textAlign: "center",
-      //   textAlign: ["left", "justify"], // Left-align on small screens, justify on larger screens
-
-      //   // textAlign: "justify",
-
-      //   // minHeight: "200px",
-      //   mx: "auto", // Center horizontally
-      // }}
-      >
-        <Heading as="h2" sx={{ fontSize: [4, 5], mb: 2 }}>
-          Welcome!
+      <Section>
+        <Heading as="h2" sx={{ fontSize: [5, 6], mb: 2 }}>
+          Use the template
         </Heading>
         <Paragraph sx={{ color: "text", fontWeight: "bold" }}>
           This project is a Gatsby starter configured with Theme UI to showcase
@@ -48,7 +34,7 @@ const IndexPage = () => (
       </Section>
 
       <Section>
-        <Heading as="h2" sx={{ fontSize: [3, 5], mb: 2 }}>
+        <Heading as="h2" sx={{ fontSize: [5, 6], mb: 2 }}>
           Features Overview
         </Heading>
         <Paragraph
@@ -63,15 +49,19 @@ const IndexPage = () => (
         </Paragraph>
       </Section>
 
-      <Box>
-        <Box variant="buttons.primary">Primary Button</Box>
-        <Box variant="text.paragraph">This is a paragraph.</Box>
-        <Box variant="grid.twoColumn">
-          <Box>Item 1</Box>
-          <Box>Item 2</Box>
-        </Box>
-        <Box variant="section.default">Default Section</Box>
-      </Box>
+      <Section>
+        <Heading as="h2" sx={{ fontSize: [5, 6], mb: 2 }}>
+          Heading Overview
+        </Heading>
+        <Paragraph
+          sx={{
+            lineHeight: "body",
+          }}
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis,
+          non.
+        </Paragraph>
+      </Section>
 
       <Section>
         <Paragraph>
@@ -100,48 +90,10 @@ const IndexPage = () => (
         text colors.
       </Section>
 
-      <Section title="Full Width Section" variant="primary">
-        This section spans a larger area and has a primary background with a
-        shadow.
-      </Section>
-
       {/* Features Section */}
-      <Section title="Multi-Mode Color Themes" variant="primary">
+      {/* <Section title="Multi-Mode Color Themes" variant="primary">
         Choose vibrant or subtle palettes to suit your needs
-      </Section>
-
-      {/* Testimonials Section */}
-      <Section width="narrow" sx={{ bg: "highlight", color: "background" }}>
-        <h2>What People Say</h2>
-        <blockquote>
-          "This design system is fantastic for any project!"
-        </blockquote>
-      </Section>
-
-      {/* Showcase Section */}
-      <Section width="full" sx={{ bg: "primary", color: "background" }}>
-        <h2>Our Work</h2>
-        <p>
-          Explore our projects and see how the design system performs in
-          real-world applications.
-        </p>
-      </Section>
-
-      <Section width="narrow" sx={{ bg: "muted", color: "text" }}>
-        <h2>Portfolio</h2>
-        <p>
-          This section is styled with the "wide" width and custom background
-          color.
-        </p>
-      </Section>
-      <Section
-        title="Multi-Mode Color Themes"
-        width="narrow"
-        sx={{ bg: "primary", color: "background" }}
-      >
-        <h2>Banner</h2>
-        this section spans the full width of the screen.
-      </Section>
+      </Section> */}
 
       <Section title="Multi-Mode Color Themes" width="narrow">
         <p>This section spans the full width of the screen.</p>

@@ -15,14 +15,18 @@ const HeroContent = ({
   <Box sx={{ mx: "auto", textAlign: "left", mb: 4 }}>
     <Heading
       as="h1"
-      sx={{ fontSize: [5, 5, 6], mb: [3, 3], lineHeight: "heading" }}
+      sx={{
+        fontSize: [7, 8, 9], // Scales with breakpoints
+        lineHeight: "heading",
+        letterSpacing: "heading",
+      }}
     >
       {title}
     </Heading>
     <Text
       as="p"
       sx={{
-        fontSize: [2, 3],
+        fontSize: [3],
         lineHeight: "body",
         mb: [4],
         maxWidth: "450px",

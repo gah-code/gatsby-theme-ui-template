@@ -20,24 +20,49 @@
 
 import { Box } from "theme-ui"
 import Heading from "./util/Heading"
+import Section from "./util/Section"
 // import theme from "../gatsby-plugin-theme-ui"
 
 const TypographyShowcase = () => (
-  <Box>
-    <section>
+  <section>
+    <>
+      <Heading as="h1" variant="hero" sx={{ textTransform: "uppercase" }}>
+        Hero Variant Heading
+      </Heading>
+
       <Heading as="h1">Dynamic H1</Heading>
       <Heading as="h2">Dynamic H2</Heading>
       <Heading as="h3">Dynamic H3</Heading>
       <Heading as="h4">Dynamic H4</Heading>
       <Heading as="h5">Dynamic H5</Heading>
+      <Heading
+        as="h1"
+        sx={{
+          color: "secondary",
+          fontSize: [7, 8, 10],
+          textAlign: "center",
+          py: 4,
+        }}
+      >
+        Custom Center Hero Style
+      </Heading>
+      <Heading as="h3" align="left">
+        Left-Aligned Heading
+      </Heading>
+      <Heading as="h3" align="center">
+        Center-Aligned Heading
+      </Heading>
+      <Heading as="h3" align="right">
+        Right-Aligned Heading
+      </Heading>
 
       <p>
         This is a body text example styled with <code>fontFamily</code> and{" "}
         <code>lineHeight</code> from the theme.
       </p>
       <p sx={{ fontWeight: "bold", mt: 3 }}>Bold text example</p>
-    </section>{" "}
-  </Box>
+    </>{" "}
+  </section>
 )
 
 const ButtonsShowcase = () => (

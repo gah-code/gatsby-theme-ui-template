@@ -26,7 +26,7 @@ const Section = ({
     {title && (
       <Box>
         <Heading
-          as="h2"
+          as="h3"
           sx={{
             variant: `text.heading`, // Use heading variant from the theme
             mb: 3,
