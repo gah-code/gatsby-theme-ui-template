@@ -1,0 +1,123 @@
+---
+title: "Enhancing Dynamic Pages with SEO Metadata in Gatsby"
+date: "2024-12-19"
+slug: "enhancing-dynamic-pages-with-seo-metadata-in-gatsby"
+excerpt: "Explore how SEO best practices like canonical URLs, Open Graph tags, and structured data enhance dynamic Gatsby pages."
+description: "Explore how SEO best practices like canonical URLs, Open Graph tags, and structured data enhance dynamic Gatsby pages."
+---
+
+import Layout from "../../components/layout/Layout"
+import { SEO } from "../../components/seo"
+import Container from "../../components/Container"
+import { Paragraph } from "theme-ui"
+import Heading from "../../components/util/Heading.js"
+
+<Layout>
+  <Container>
+  
+    <Heading as="h1">Enhancing Dynamic Pages with SEO Metadata in Gatsby</Heading>
+
+    <Paragraph sx={{ fontSize: [2, 3], lineHeight: "body", textAlign: "justify", mb: 5 }}>
+      Optimizing SEO metadata for dynamic pages in Gatsby involves much more than just adding a title or description. It’s about creating a seamless user experience, enhancing search engine visibility, and improving accessibility. This guide explores the strategies and implementations I used to make dynamic pages more impactful.
+    </Paragraph>
+
+    ### **Key Enhancements**
+
+    #### **1. Canonical URLs: Resolving Duplicate Content**
+    Canonical URLs ensure that search engines understand the primary URL for a page, preventing issues caused by duplicate content. By dynamically generating these URLs using the page slug and the site’s base URL, I established clear and consistent pathways for indexing.
+
+    **Code Example**:
+    ```jsx
+    export const Head = (props) => {
+      const { page, site } = props.data;
+      const url = `${site.siteMetadata.siteUrl}/${page.slug}`;
+
+      return (
+        <SEOHead
+          title={page.title || site.siteMetadata.title}
+          description={page.description || site.siteMetadata.description}
+          image={page.image}
+          url={url}
+        />
+      );
+    };
+    ```
+
+    #### **2. Open Graph and Twitter Metadata: Social Media Optimization**
+    To enhance social sharing, Open Graph and Twitter metadata were added. These ensure that links shared on platforms like Facebook and Twitter have rich previews, improving click-through rates.
+
+    **Example Implementation**:
+    ```jsx
+    export default function SEOHead({ title, description, image, url }) {
+      return (
+        <>
+          <meta charSet="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <meta name="robots" content="index, follow" />
+          <title>{title}</title>
+          <meta name="description" content={description || "Default description"} />
+          <link rel="canonical" href={url} />
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content={title} />
+          <meta property="og:description" content={description} />
+          <meta property="og:url" content={url} />
+          {image && <meta property="og:image" content={image.url} />}
+          {image && <meta property="og:image:alt" content={image.alt || "Image"} />}
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content={title} />
+          <meta name="twitter:description" content={description} />
+          {image && <meta name="twitter:image" content={image.url} />}
+        </>
+      );
+    }
+    ```
+
+    #### **3. Default Metadata Fallbacks**
+    Every dynamic page is ensured a basic level of metadata through fallbacks in `gatsby-config.js`. This creates a safety net for pages missing specific fields, ensuring SEO coverage across the site.
+
+    **gatsby-config.js Example**:
+    ```javascript
+    module.exports = {
+      siteMetadata: {
+        siteUrl: "https://yoursite.com",
+        title: "Default Site Title",
+        description: "Default description for SEO purposes.",
+        author: "@defaultAuthor",
+      },
+    };
+    ```
+
+
+    #### **4. Accessibility with Alt Text**
+    To improve both accessibility and SEO, alt text for images was proxied from Contentful’s `title` field if the `alt` attribute was not explicitly set.
+
+    **Contentful Proxy Example**:
+    ```javascript
+    actions.createTypes(/* GraphQL */ `
+      type ContentfulAsset implements Node {
+        alt: String @proxy(from: "title")
+        url: String
+      }
+    `);
+    ```
+
+    ### **Benefits of These Enhancements**
+
+    1. **SEO Improvements**: Canonical URLs and metadata ensure search engines properly index pages.
+
+    2. **Accessibility**: Alt text and structured data enhance the user experience, especially for users relying on assistive technologies.
+
+    3. **Social Media Engagement**: Rich previews via Open Graph and Twitter cards drive traffic from social platforms.
+
+    4. **Scalability**: Dynamic fallback configurations ensure every page meets a minimum SEO standard.
+
+  </Container>
+</Layout>
+
+export const Head = () => (
+  <SEO
+    title="Enhancing Dynamic Pages with SEO Metadata in Gatsby"
+    description="Explore how SEO best practices like canonical URLs, Open Graph tags, and structured data enhance dynamic Gatsby pages."
+    pathname="/enhancing-dynamic-pages-with-seo-metadata-in-gatsby"
+  />
+)

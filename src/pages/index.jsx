@@ -12,20 +12,6 @@ import Paragraph from "../components/util/Paragraph"
 const IndexPage = () => (
   <Layout>
     <Box sx={{ maxWidth: "900px", mx: "auto", p: [3, 4] }}>
-      {/* <Hero
-        title="Elevate Your UI with Multi-Mode Themes & Dynamic Styling"
-        // subtitle="Seamlessly switch between color modes, experiment with different typography scales, and enjoy a unified design system that drives all your site’s components. Whether you’re building a blog, portfolio, or documentation site, this starter offers a strong foundation for scalability and customization."
-        subtitle="Emphasize benefits like accessibility, scalability, and ease of customization"
-        primaryLink={{
-          label: "Get Started",
-          href: "/setup-guide", // Link to the setup guide or demo page
-        }}
-        secondaryLink={{
-          label: "Explore Features",
-          href: "#features", // Anchor link to the features section
-        }}
-      /> */}
-
       <Hero
         title="Elevate Your UI with Multi-Mode Themes & Dynamic Styling"
         subtitle="Emphasize benefits like accessibility, scalability, and ease of customization"
