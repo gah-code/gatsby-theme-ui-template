@@ -66,8 +66,8 @@ const PostsPage = ({ data }) => {
 
 export const Head = () => (
   <SEO
-    title="Blog Posts"
-    description="A list of all blog posts available on this site."
+    title="Blog Posts | All Posts"
+    description="A list of all blog posts available on this site, combined with Markdown and JSX to create rich, interactive pages with built-in code syntax highlighting from Theme UI presets."
     pathname="/posts"
   />
 )

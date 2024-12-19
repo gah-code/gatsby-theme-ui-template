@@ -22,7 +22,6 @@
 
 /** @jsxImportSource theme-ui */
 import { Grid, Box, Heading, Text, Image, Button } from "theme-ui"
-import layout from "../components/layout/Layout"
 import Layout from "../components/layout/Layout"
 
 const GridVariantsPage = () => {

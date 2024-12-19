@@ -1,22 +1,45 @@
+// import { Box } from "theme-ui"
+
+// const Main = props => {
+//   return (
+//     <Box
+//       as="main"
+//       sx={{
+//         display: "flex",
+//         flex: 1,
+//         px: [2, 3],
+//         pb: 4,
+//         alignItems: "center",
+//         borderBottom: "solid 1px",
+//         borderTop: "solid 1px",
+//         borderColor: "lite",
+//         border: "solid 5px red",
+//       }}
+//       {...props}
+//     />
+//   )
+// }
+
+// export default Main
+
+/** @jsxImportSource theme-ui */
 import { Box } from "theme-ui"
 
-const Main = props => {
-  return (
-    <Box
-      as="main"
-      sx={{
-        display: "flex",
-        flex: 1,
-        px: [3, 4],
-        pb: 4,
-        alignItems: "center",
-        borderBottom: "solid 1px",
-        borderTop: "solid 1px",
-        borderColor: "lite",
-      }}
-      {...props}
-    />
-  )
-}
+const Main = props => (
+  <Box
+    as="main"
+    sx={{
+      display: "flex",
+      flex: 1,
+      px: [2, 3],
+      pb: 4,
+      alignItems: "center",
+      borderBottom: "solid 1px",
+      borderTop: "solid 1px",
+      borderColor: "muted", // Use theme color tokens
+    }}
+    {...props}
+  />
+)
 
 export default Main

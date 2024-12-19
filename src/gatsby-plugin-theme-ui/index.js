@@ -10,31 +10,29 @@ import variants from "./variants"
 
 const theme = {
   config: {
+    // Enable CSS variables and automatic system color mode detection
     useCustomProperties: true,
     useColorSchemeMediaQuery: true,
     initialColorModeName: "light",
   },
-  colors,
-
-  ...typography,
-  space,
-  radii,
-  buttons,
-  forms,
-  text,
-  styles,
-
-  ...variants, // Spread variants into the theme
-  breakpoints: ["32em", "48em", "64em", "80em"],
-
+  colors, // Define primary, secondary, background, and other color modes
+  ...typography, // Fonts, font sizes, weights, and line heights
+  space, // Spacing scale (margin/padding)
+  radii, // Border radius values
+  buttons, // Button styles and variants
+  forms, // Input, textarea, and select styles
+  text, // Text styles (e.g., heading, display)
+  styles, // Global styles and reset rules
+  ...variants, // Component-specific variants (e.g., cards, grids, badges)
+  breakpoints: ["32em", "48em", "64em", "80em"], // Responsive design breakpoints
   sizes: {
-    container: "900px", // Default container width
-    full: "100%",
-    narrow: "695px",
-    wide: "950px",
-    content: "80%", // Common content width
-    sidebar: "300px", // Fixed sidebar size
-    card: "320px", // Card component size
+    container: "900px", // Default width for most layouts
+    full: "100%", // Full viewport width
+    narrow: "600px", // For blog posts or smaller layouts
+    wide: "950px", // For content-heavy sections
+    content: "80%", // Percentage-based width for text-heavy content
+    sidebar: "300px", // Fixed width for sidebars
+    card: "320px", // Default card width
   },
 }
 

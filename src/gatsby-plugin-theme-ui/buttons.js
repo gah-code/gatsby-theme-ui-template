@@ -3,6 +3,7 @@ const buttons = {
     color: "background",
     bg: "primary",
     borderRadius: "default",
+
     "&:hover": {
       bg: "secondary",
     },
