@@ -17,7 +17,7 @@ const Hero = ({
       color,
       py: [1],
       px: [1, 3, 5],
-      mt: 5,
+      mt: 4,
     }}
   >
     <HeroContent

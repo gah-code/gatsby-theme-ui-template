@@ -9,7 +9,6 @@ const Section = ({
   variant = "default",
   bg,
   color,
-
   ...props
 }) => (
   <Box
@@ -19,7 +18,7 @@ const Section = ({
       bg, // Override background if passed
       color, // Override text color if passed
       py: [3, 4],
-      px: [2, 4, 5],
+      px: [1, 4, 5],
     }}
     {...props}
   >

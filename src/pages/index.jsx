@@ -8,16 +8,17 @@ import Heading from "../components/util/Heading"
 import Hero from "../components/ui/hero/Hero"
 import Section from "../components/util/Section"
 import Paragraph from "../components/util/Paragraph"
+import SectionBlock from "../components/util/SectionBlock"
 
 const IndexPage = () => (
   <Layout>
     <Box sx={{ maxWidth: "900px", mx: "auto", p: [3, 4] }}>
       <Hero
-        title="Multi-Mode UI Theme : The Design Graph Starter Template"
+        title="≞ Multi-Mode UI Theme  The Design Graph Template"
         subtitle="Elevate Your UI, emphasize benefits like accessibility, scalability, and ease of customization"
         primaryLink={{ label: "Get Started", href: "/setup-guide" }}
         secondaryLink={{ label: "Explore Features", href: "#features" }}
-        bg="muted"
+        // bg="text"
         color="text"
       />
 
@@ -51,17 +52,49 @@ const IndexPage = () => (
 
       <Section>
         <Heading as="h2" sx={{ fontSize: [5, 6], mb: 2 }}>
-          Heading Overview
+          Dynamic Headings out of box
         </Heading>
         <Paragraph
           sx={{
             lineHeight: "body",
           }}
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis,
-          non.
+          Scenario 1: Using Global Styles Custom styles object configured for
+          headings and other elements
         </Paragraph>
       </Section>
+
+      <SectionBlock
+        subtitle="Key Mappings"
+        heading="Dynamic Variant Mapping Heading Components"
+        paragraph="Scenario 2: Using Custom Typography Variants Dynamic Variant Mapping"
+        listItems={[
+          "Dynamic headings",
+          "Custom typography variants",
+          "Responsive styles",
+        ]}
+        align="left"
+        sx={{
+          bg: "muted",
+          color: "text",
+        }}
+      />
+
+      <SectionBlock
+        subtitle="Reusable Components"
+        heading="Simplify Your Layout"
+        paragraph="Reusable components like this make it easy to maintain consistency across your project while adding flexibility."
+        listItems={[
+          "Dynamic headings",
+          "Custom typography variants",
+          "Responsive styles",
+        ]}
+        align="left"
+        sx={{
+          bg: "background",
+          color: "text",
+        }}
+      />
 
       <Section>
         <Paragraph>

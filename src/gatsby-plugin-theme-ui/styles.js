@@ -7,12 +7,12 @@ const styles = {
     fontWeight: "body",
   },
   h1: {
-    fontSize: [48],
+    fontSize: [40],
     fontFamily: "heading",
     fontWeight: "heading",
     lineHeight: "heading",
     color: "text",
-    mt: 1,
+    mt: 3,
     mb: 4,
   },
 
