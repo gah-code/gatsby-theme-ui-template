@@ -69,16 +69,21 @@ const styles = {
     p: 3,
     borderRadius: "default",
     overflowX: "auto", // Ensures horizontal scrolling for long lines
-    whiteSpace: "pre-wrap", // Preserves line breaks and prevents overflow
+    // whiteSpace: "pre-wrap", // Preserves line breaks and prevents overflow
   },
-  ".highlight": {
-    background: "hsla(50, 100%, 80%, 0.2)", // Custom highlight for code blocks
-  },
+  "& .keyword": { color: "secondary" },
+  "& .function": { color: "primary", fontWeight: "bold" },
 
   code: {
     ...customSyntaxTheme, // Include custom syntax styles
     fontFamily: "monospace",
-    fontSize: 1,
+    fontSize: 2,
+    color: "text",
+    fontWeight: "bold",
+
+    // bg: "highlight",
+    padding: "2px 4px",
+    borderRadius: "default",
   },
   footer: {
     bg: "primary",

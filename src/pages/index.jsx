@@ -9,12 +9,15 @@ import Hero from "../components/ui/hero/Hero"
 import Section from "../components/util/Section"
 import Paragraph from "../components/util/Paragraph"
 import SectionBlock from "../components/util/SectionBlock"
+import InvertedBanner from "../components/ui/InvertedBanner"
+import Code from "../components/Code"
+import CodeBlock from "../components/CodeBlock"
 
 const IndexPage = () => (
   <Layout>
     <Box sx={{ maxWidth: "900px", mx: "auto", p: [3, 4] }}>
       <Hero
-        title="≞ Multi-Mode UI Theme  The Design Graph Template"
+        title="Multi-Mode UI Theme  The Design Graph Template"
         subtitle="Elevate Your UI, emphasize benefits like accessibility, scalability, and ease of customization"
         primaryLink={{ label: "Get Started", href: "/setup-guide" }}
         secondaryLink={{ label: "Explore Features", href: "#features" }}
@@ -64,6 +67,32 @@ const IndexPage = () => (
         </Paragraph>
       </Section>
 
+      <Section>
+        <CodeBlock
+          code={`
+const Heading = ({
+  as: Tag = "h2",
+  variant = "heading", // Defaults to text.heading
+  align = "left", // Default alignment
+  children,
+  sx = {},
+  ...props
+}) => (
+  <Tag
+    sx={{
+      variant: \`styles.\${Tag}\`, // Use styles.h1, styles.h2, etc.
+      textAlign: align,
+      ...sx, // Custom inline styles
+    }}
+    {...props}
+  >
+    {children}
+  </Tag>
+)
+        `}
+        />
+      </Section>
+
       <SectionBlock
         subtitle="Key Mappings"
         heading="Dynamic Variant Mapping Heading Components"
@@ -79,6 +108,13 @@ const IndexPage = () => (
           color: "text",
         }}
       />
+
+      <Section>
+        <CodeBlock
+          code={`const greet = (name) => { return \`Hello, \${name}!\`;};`}
+          showCopy={false}
+        />
+      </Section>
 
       <SectionBlock
         subtitle="Reusable Components"

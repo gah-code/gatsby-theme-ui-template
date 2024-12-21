@@ -16,12 +16,10 @@ const SectionBlock = ({
 }) => {
   return (
     <Section
-      // as="section"
       sx={{
         // py: [3, 5],
-        // px: [3, 4],
+        px: [3],
         py: [4],
-
         bg: "background",
         // color: "text",
         // borderRadius: "default",
