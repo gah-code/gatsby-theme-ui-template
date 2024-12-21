@@ -3,7 +3,7 @@ import React from "react"
 import { Box, Text } from "theme-ui"
 import Heading from "../components/util/Heading"
 import Layout from "../components/layout/Layout"
-import Code from "../components/Code"
+import Code from "../components/util/Code"
 
 const TypographyDemoPage = () => {
   return (

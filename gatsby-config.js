@@ -25,7 +25,7 @@ module.exports = {
         name: "LinkedIn",
         url: "https://www.linkedin.com/in/gilberto-haro-2b108222b/",
       },
-      { name: "CodePen", url: "https://codepen.io/your-username" },
+      { name: "CodePen", url: "https://codepen.io/Gilbert-Haro" },
     ],
   },
   plugins: [

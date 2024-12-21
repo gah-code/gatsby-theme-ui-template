@@ -62,7 +62,7 @@ const SectionBlock = ({
         <Text
           as="p"
           sx={{
-            fontSize: [3],
+            fontSize: [3, 4],
             lineHeight: "body",
             mb: 3,
           }}
@@ -91,7 +91,7 @@ const SectionBlock = ({
                 pl: 1,
                 py: 1,
                 color: "text",
-                fontSize: [2],
+                fontSize: [2, 3],
                 "&:before": {
                   content: '"•"',
                   color: "primary",

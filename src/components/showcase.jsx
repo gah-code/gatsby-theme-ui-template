@@ -18,7 +18,7 @@
 //   },
 // }
 
-import { Box } from "theme-ui"
+import { Box, Text } from "theme-ui"
 import Heading from "./util/Heading"
 import Section from "./util/Section"
 // import theme from "../gatsby-plugin-theme-ui"
@@ -26,35 +26,46 @@ import Section from "./util/Section"
 const TypographyShowcase = () => (
   <section>
     <>
-      <Heading as="h1" variant="hero" sx={{ textTransform: "uppercase" }}>
-        Hero Variant Heading
-      </Heading>
-
-      <Heading as="h1">Dynamic H1</Heading>
-      <Heading as="h2">Dynamic H2</Heading>
-      <Heading as="h3">Dynamic H3</Heading>
-      <Heading as="h4">Dynamic H4</Heading>
-      <Heading as="h5">Dynamic H5</Heading>
-      <Heading
-        as="h1"
-        sx={{
-          color: "secondary",
-          fontSize: [7, 8, 10],
-          textAlign: "center",
-          py: 4,
-        }}
-      >
-        Custom Center Hero Style
-      </Heading>
-      <Heading as="h3" align="left">
-        Left-Aligned Heading
-      </Heading>
-      <Heading as="h3" align="center">
-        Center-Aligned Heading
-      </Heading>
-      <Heading as="h3" align="right">
-        Right-Aligned Heading
-      </Heading>
+      {/* Section Variants */}
+      <h2>Section Variants</h2>
+      <Box variant="section.default" sx={{ mb: 4 }}>
+        Default Section
+      </Box>
+      <Box variant="section.highlight" sx={{ mb: 4 }}>
+        Highlight Section
+      </Box>
+      <Box variant="section.muted" sx={{ mb: 4 }}>
+        Muted Section
+      </Box>
+      <Box variant="section.primary" sx={{ mb: 4 }}>
+        Primary Section
+      </Box>
+      {/* Spacer Variants */}
+      <h2>Spacer Variants</h2>
+      <Box variant="spacer.small" sx={{ bg: "muted", mb: 3 }}></Box>
+      <Box variant="spacer.medium" sx={{ bg: "muted", mb: 3 }}></Box>
+      <Box variant="spacer.large" sx={{ bg: "muted", mb: 3 }}></Box>
+      {/* Text Variants */}
+      <h1>Text Variants</h1>
+      <Text variant="heading">Heading Variant</Text>
+      <Text variant="display" sx={{ mb: 3 }}>
+        Display Variant
+      </Text>
+      <Text variant="caps" sx={{ mb: 3 }}>
+        CAPS Variant
+      </Text>
+      <Text variant="paragraph" sx={{ mb: 3 }}>
+        Paragraph Variant
+      </Text>
+      <Text variant="block" sx={{ mb: 3 }}>
+        Block Variant (Justified text with margins)
+      </Text>
+      <Text variant="small" sx={{ mb: 3 }}>
+        Small Variant (Italic and Muted)
+      </Text>
+      <Text variant="callout" sx={{ mb: 3 }}>
+        Callout Variant (Bold and Primary Color)
+      </Text>
 
       <p>
         This is a body text example styled with <code>fontFamily</code> and{" "}

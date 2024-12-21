@@ -18,7 +18,7 @@ const Section = ({
       bg, // Override background if passed
       color, // Override text color if passed
       py: [3, 4],
-      px: [1, 4, 5],
+      px: [1, 3, 5],
     }}
     {...props}
   >
@@ -28,7 +28,7 @@ const Section = ({
           as="h3"
           sx={{
             variant: `text.heading`, // Use heading variant from the theme
-            mb: 3,
+            mb: 2,
           }}
         >
           {title}

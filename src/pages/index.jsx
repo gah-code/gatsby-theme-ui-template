@@ -10,8 +10,8 @@ import Section from "../components/util/Section"
 import Paragraph from "../components/util/Paragraph"
 import SectionBlock from "../components/util/SectionBlock"
 import InvertedBanner from "../components/ui/InvertedBanner"
-import Code from "../components/Code"
-import CodeBlock from "../components/CodeBlock"
+import Code from "../components/util/Code"
+import CodeBlock from "../components/util/CodeBlock"
 
 const IndexPage = () => (
   <Layout>
@@ -26,7 +26,7 @@ const IndexPage = () => (
       />
 
       <Section>
-        <Heading as="h2" sx={{ fontSize: [5, 6], mb: 2 }}>
+        <Heading as="h2" sx={{ mb: 2 }}>
           Use the template
         </Heading>
         <Paragraph sx={{ color: "text", fontWeight: "bold" }}>
@@ -38,7 +38,7 @@ const IndexPage = () => (
       </Section>
 
       <Section>
-        <Heading as="h2" sx={{ fontSize: [5, 6], mb: 2 }}>
+        <Heading as="h2" sx={{ mb: 2, color: "secondary" }}>
           Features Overview
         </Heading>
         <Paragraph
@@ -51,6 +51,94 @@ const IndexPage = () => (
           unified typography, our tools ensure scalability, consistency, and
           creative flexibility in your projects.
         </Paragraph>
+      </Section>
+
+      <Section>
+        <Heading as="h2" sx={{ fontSize: [5, 6], mb: 2, color: "secondary" }}>
+          Multi-Mode Color Themes
+        </Heading>
+        <Paragraph
+          sx={{
+            lineHeight: "body",
+          }}
+        >
+          Light, Dark, Purple, Pink, and Forest—pick the mode that suits your
+          content’s personality. This starter lets you experiment with vibrant
+          palettes or subtle hues. With just a few lines of configuration,
+          create a look that resonates with your brand and audience.
+        </Paragraph>
+      </Section>
+
+      <Section variant="muted">
+        <Heading as="h2" sx={{ fontSize: [5, 6], mb: 2 }} useGlobal>
+          Unified Typography & Design Tokens
+        </Heading>
+        <Paragraph
+          sx={{
+            lineHeight: "body",
+          }}
+        >
+          Manage font families, sizes, weights, and line heights from a single
+          source. Update the theme to instantly refresh your entire site’s
+          typography. No more hunting down hardcoded font sizes— change it once,
+          and it updates everywhere.
+        </Paragraph>
+      </Section>
+
+      <Section>
+        <Heading as="h2" sx={{ fontSize: [5, 6], mb: 2 }}>
+          MDX Integration & Syntax Highlighting
+        </Heading>
+        <Paragraph
+          sx={{
+            lineHeight: "body",
+          }}
+        >
+          Combine content and presentation elegantly with MDX. Write Markdown
+          and JSX together, creating rich, interactive pages. Enjoy built-in
+          syntax highlighting powered by Theme UI and easily swap out presets
+          for a coding theme that best matches your brand.
+        </Paragraph>
+      </Section>
+
+      <Section>
+        <Heading as="h2" sx={{ fontSize: [5, 6], mb: 2 }}>
+          Dynamic Components & Variants
+        </Heading>
+        <Paragraph
+          sx={{
+            lineHeight: "body",
+            // color: "muted",
+          }}
+        >
+          Buttons, forms, cards, badges, and more are defined as variants within
+          the theme. Need a new button style or a unique card layout? Add it to
+          the theme variants, and use it across your site with minimal effort.
+          Consistency and scalability have never been easier.
+        </Paragraph>
+      </Section>
+
+      {/* <Section
+        title="Custom Styled Section"
+        variant="custom"
+        sx={{
+          bg: "highlight",
+          color: "secondary",
+          borderRadius: "default",
+          boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+        }}
+      >
+        Customize this section’s styles using the `sx` prop.
+      </Section> */}
+
+      <Section
+        title="Highlighted Section"
+        variant="highlight"
+        bg="muted"
+        color="primary"
+      >
+        This section uses the "highlight" variant with custom background and
+        text colors.
       </Section>
 
       <Section>
@@ -68,21 +156,62 @@ const IndexPage = () => (
       </Section>
 
       <Section>
+        <Heading as="h1" variant="heading">
+          Theme Variant Heading
+        </Heading>
+        <Heading as="h1" variant="hero">
+          Hero Heading
+        </Heading>
+        <Heading
+          as="h4"
+          variant="caps"
+          sx={{
+            color: "secondary",
+            textTransform: "uppercase",
+            fontSize: [4, 5], // Custom responsive size
+          }}
+        >
+          Custom Heading
+        </Heading>
+
+        <Heading as="h1" useGlobal>
+          H1 Heading - Responsive
+        </Heading>
+        <Heading as="h2" useGlobal>
+          H2 Heading - Responsive
+        </Heading>
+        <Heading as="h3" useGlobal>
+          H3 Heading - Responsive
+        </Heading>
+        <Heading as="h4" useGlobal>
+          H4 Heading - Responsive
+        </Heading>
+        <Heading as="h5" useGlobal>
+          H5 Heading - Responsive
+        </Heading>
+        <Heading as="h6" useGlobal>
+          H6 Heading - Responsive
+        </Heading>
+      </Section>
+
+      <Section>
         <CodeBlock
           code={`
 const Heading = ({
-  as: Tag = "h2",
-  variant = "heading", // Defaults to text.heading
+  as: Tag = "h2", // Dynamic HTML tag (e.g., h1, h2)
+  variant = "heading", // Default variant from theme.text
   align = "left", // Default alignment
+  useGlobal = false, // Switch between text variants and global styles
   children,
-  sx = {},
+  sx = {}, // Custom inline styles
   ...props
 }) => (
   <Tag
     sx={{
-      variant: \`styles.\${Tag}\`, // Use styles.h1, styles.h2, etc.
-      textAlign: align,
-      ...sx, // Custom inline styles
+      // Use global styles when useGlobal is true, else apply text variants
+      variant: useGlobal ? \`styles.\${Tag}\` : \`text.\${variant}\`,
+      textAlign: align, // Alignment: left, center, right
+      ...sx, // Inline custom styles
     }}
     {...props}
   >
@@ -108,13 +237,6 @@ const Heading = ({
           color: "text",
         }}
       />
-
-      <Section>
-        <CodeBlock
-          code={`const greet = (name) => { return \`Hello, \${name}!\`;};`}
-          showCopy={false}
-        />
-      </Section>
 
       <SectionBlock
         subtitle="Reusable Components"
@@ -157,44 +279,6 @@ const Heading = ({
       <Section title="Muted Section" variant="muted" bg="muted" color="primary">
         This section uses the muted variant but overrides the background and
         text colors.
-      </Section>
-
-      {/* Features Section */}
-      {/* <Section title="Multi-Mode Color Themes" variant="primary">
-        Choose vibrant or subtle palettes to suit your needs
-      </Section> */}
-
-      <Section title="Multi-Mode Color Themes" width="narrow">
-        <p>This section spans the full width of the screen.</p>
-        Light, Dark, Purple, Pink, and Forest—pick the mode that suits your
-        content’s personality. This starter lets you experiment with vibrant
-        palettes or subtle hues. With just a few lines of configuration, create
-        a look that resonates with your brand and audience.
-      </Section>
-
-      <Section title="Unified Typography & Design Tokens" bg="muted">
-        Manage font families, sizes, weights, and line heights from a single
-        source. Update the theme to instantly refresh your entire site’s
-        typography. No more hunting down hardcoded font sizes— change it once,
-        and it updates everywhere.
-      </Section>
-
-      <Section title="Dynamic Components & Variants">
-        Buttons, forms, cards, badges, and more are defined as variants within
-        the theme. Need a new button style or a unique card layout? Add it to
-        the theme variants, and use it across your site with minimal effort.
-        Consistency and scalability have never been easier.
-      </Section>
-
-      <Section
-        title="MDX Integration & Syntax Highlighting"
-        bg="highlight"
-        color="background"
-      >
-        Combine content and presentation elegantly with MDX. Write Markdown and
-        JSX together, creating rich, interactive pages. Enjoy built-in syntax
-        highlighting powered by Theme UI and easily swap out presets for a
-        coding theme that best matches your brand.
       </Section>
 
       <h1>Welcome to the Multi-Mode Theme</h1>

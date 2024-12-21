@@ -7,42 +7,51 @@ const styles = {
     fontWeight: "body",
   },
   h1: {
-    fontSize: [40],
-    fontFamily: "heading",
-    fontWeight: "heading",
-    lineHeight: "heading",
-    color: "text",
-    mt: 3,
-    mb: 4,
+    fontSize: [7, 8, 9], // 40px → 48px → 64px (Responsive scaling at breakpoints)
+    fontFamily: "heading", // Uses the 'heading' font family from the theme
+    fontWeight: "heading", // Bold weight for strong emphasis
+    lineHeight: "heading", // Compact line height for headings
+    color: "text", // Default text color
+    mt: 3, // Top margin (16px, based on space scale)
+    mb: 3, // Bottom margin (16px, based on space scale)
   },
 
   h2: {
-    fontSize: [32],
+    fontSize: [6, 7, 8], // 32px → 40px → 48px (Scales dynamically)
     fontFamily: "heading",
     fontWeight: "heading",
     lineHeight: "heading",
-    color: "primary",
-    mt: [2, 1],
-    mb: 3,
+    color: "primary", // Primary color for differentiation
+    mt: [2, 1], // Top margin: 8px → 4px (Adjusts spacing on smaller screens)
+    mb: 3, // Bottom margin: 16px
   },
+
   h3: {
-    variant: "text.heading",
-    fontSize: 4,
-    color: "secondary",
+    fontSize: [5, 6, 7], // 24px → 32px → 40px (Responsive font sizes)
+    fontFamily: "heading",
+    fontWeight: "heading",
+    color: "secondary", // Secondary color for hierarchy
   },
+
   h4: {
-    variant: "text.heading",
-    fontSize: 3,
+    fontSize: [4, 5, 6], // 20px → 24px → 32px (For subheadings or feature titles)
+    fontFamily: "heading",
+    fontWeight: "heading",
   },
+
   h5: {
-    variant: "text.heading",
-    fontSize: 2,
-    color: "accent",
+    fontSize: [3, 4, 5], // 16px → 20px → 24px (For captions or subtitles)
+    fontFamily: "heading",
+    fontWeight: "heading",
+    color: "accent", // Accent color for highlights
   },
+
   h6: {
-    variant: "text.heading",
-    fontSize: 1,
+    fontSize: [2, 3, 4], // 14px → 16px → 20px (Smallest heading, often used for meta info)
+    fontFamily: "heading",
+    fontWeight: "heading",
   },
+
   hero: {
     fontSize: [56, 64, 72], // Larger font sizes for hero sections
     fontFamily: "heading",

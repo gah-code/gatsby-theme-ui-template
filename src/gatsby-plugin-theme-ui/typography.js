@@ -5,6 +5,7 @@ const typography = {
     monospace: "Menlo, monospace",
   },
   fontSizes: [10, 12, 14, 16, 20, 24, 32, 40, 48, 64, 72, 96],
+
   fontWeights: {
     body: 500,
     heading: 700,

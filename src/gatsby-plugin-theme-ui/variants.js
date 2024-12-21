@@ -38,17 +38,28 @@ const variants = {
       lineHeight: "heading",
       fontSize: [5, 6, 7], // Adjust for breakpoints (40px, 48px, 64px)
     },
+    display: {
+      fontFamily: "heading",
+      fontWeight: "bold",
+      fontSize: [7, 8, 9],
+      lineHeight: 1.2,
+      letterSpacing: "-0.02em",
+    },
+
+    hero: {
+      fontFamily: "heading",
+      fontWeight: "bold",
+      fontSize: [8, 9, 10],
+      lineHeight: 1.2,
+      textAlign: "center",
+      color: "primary",
+    },
     caps: {
       textTransform: "uppercase",
       letterSpacing: ".2em",
+      fontSize: [2, 3],
     },
-    display: {
-      variant: "text.heading",
-      fontSize: [5, 6],
-      fontWeight: "heading",
-      letterSpacing: "-0.02em",
-      mt: 4,
-    },
+
     paragraph: {
       fontSize: 2,
       lineHeight: "body",

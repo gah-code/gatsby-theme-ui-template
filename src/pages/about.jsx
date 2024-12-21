@@ -7,16 +7,30 @@ import Heading from "../components/util/Heading"
 
 const AboutPage = () => (
   <Layout>
-    <Box sx={{ maxWidth: "900px", mx: "auto", px: [2, 4], py: [5, 6] }}>
+    <Box sx={{ maxWidth: "900px", mx: "auto", px: [2, 4], py: [5] }}>
       <Box
         sx={{
           bg: "background",
           color: "text",
-          py: [5, 6],
-          textAlign: "center",
+          py: [2],
         }}
       >
-        <Heading as="h1" variant="hero">
+        {/* <Heading
+          as="h1"
+          align="center"
+          sx={{
+            fontSize: [8, 9, 10], // Scales with breakpoints
+            lineHeight: "heading",
+            letterSpacing: "heading",
+            px: [2],
+          }}
+        >
+          About the Template
+        </Heading> */}
+        <Heading as="h4" variant="hero" useGlobal>
+          About the Template
+        </Heading>
+        <Heading as="h1" variant="hero" useGlobal>
           Create Stunning Experiences
         </Heading>
         <Heading as="h2" variant="heading">
@@ -39,18 +53,6 @@ const AboutPage = () => (
         Discover Endless Possibilities
       </Heading>
 
-      <Heading
-        as="h1"
-        align="center"
-        sx={{
-          fontSize: [8, 9, 10], // Scales with breakpoints
-          lineHeight: "heading",
-          letterSpacing: "heading",
-          px: [2],
-        }}
-      >
-        About the Template
-      </Heading>
       {/* <Heading as="h2" variant="display">
         Display Heading
       </Heading>

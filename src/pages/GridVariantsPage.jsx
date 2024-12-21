@@ -29,7 +29,7 @@ const GridVariantsPage = () => {
         sx={{
           maxWidth: "container",
           mx: "auto",
-          px: [3, 4],
+          px: [2, 4],
           py: 4,
         }}
       >
