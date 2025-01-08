@@ -1,64 +1,118 @@
 /** @jsxImportSource theme-ui */
 import React from "react"
 import { graphql, Link, navigate } from "gatsby"
-import { Box } from "theme-ui"
+import { Box, Flex, Text, Button } from "theme-ui"
 import Container from "../components/Container"
-// import { Helmet } from "react-helmet"
 import { SEO } from "../components/seo"
 import Layout from "../components/layout/Layout"
 
 const PostsPage = ({ data }) => {
   const posts = data.allMdx.nodes
-  // const canonicalUrl = `https://www.example.com${frontmatter.slug}`
 
   return (
     <Layout>
       <Container>
-        <Box sx={{ maxWidth: "800px", mx: "auto", p: [3, 4, 5] }}>
-          <h1 sx={{ fontSize: 5, marginBottom: 4 }}>All Blog Posts</h1>
-          <ul
+        <Flex sx={{ flexDirection: ["column", "row"], gap: 4 }}>
+          {/* Sidebar */}
+          <Box
             sx={{
-              listStyle: "none",
-              m: 0,
-              // px: 3,
-              // py: 4,
+              flex: ["1 1 auto", "1 0 350px"], // Sidebar responsive width
+              mt: 4,
+              p: 2,
+              bg: "muted",
+              borderRadius: "default",
+              boxShadow: "0 2px 6px rgba(0, 0, 0, 0.1)",
             }}
           >
-            {posts.map(post => (
-              <li key={post.id} sx={{ marginBottom: 3 }}>
-                <h2>
+            {/* <Text as="h2" sx={{ fontSize: 4, mb: 3 }}>
+              Blog Posts
+            </Text> */}
+            <ul sx={{ listStyle: "none", p: 0, m: 0 }}>
+              {posts.map(post => (
+                <Box
+                  as="li"
+                  key={post.id}
+                  sx={{
+                    mb: 3,
+                    p: 3,
+                    borderRadius: "default",
+                    // bg: "background",
+                    boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+                    transition: "box-shadow 0.2s ease-in-out",
+                    "&:hover": {
+                      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+                    },
+                  }}
+                >
                   <Link
                     to={`/posts/${post.frontmatter.slug}`}
-                    sx={{ textDecoration: "none", color: "primary" }}
+                    sx={{
+                      textDecoration: "none",
+                      color: "primary",
+                      "&:hover": { textDecoration: "underline" },
+                    }}
                   >
-                    {post.frontmatter.title}
+                    <Text as="h3" sx={{ fontSize: 3, mb: 2 }}>
+                      {post.frontmatter.title}
+                    </Text>
                   </Link>
-                </h2>
-                <p>{post.frontmatter.excerpt}</p>
-                <p sx={{ color: "textMuted" }}>{post.frontmatter.date}</p>
-              </li>
-            ))}
-          </ul>
+                  <Text sx={{ fontSize: 2, mb: 2, color: "textMuted" }}>
+                    {post.frontmatter.date}
+                  </Text>
+                  <Text sx={{ fontSize: 2 }}>{post.frontmatter.excerpt}</Text>
+                </Box>
+              ))}
+            </ul>
+          </Box>
 
-          <button
-            onClick={() => navigate(-1)} // Navigate to the previous page
+          {/* Main Content */}
+          <Box
             sx={{
-              marginBottom: 4,
-              padding: 2,
-              backgroundColor: "muted",
-              color: "primary",
-              border: "none",
-              borderRadius: "4px",
+              flex: ["1 1 auto", "3 1 600px"],
+              p: 3,
+              borderRadius: "default",
+              boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+            }}
+          >
+            <Text as="h1" sx={{ fontSize: 5, mb: 2 }}>
+              Welcome to the Blog
+            </Text>
+            <Text sx={{ fontSize: 2, mb: 3 }}>
+              Explore our latest posts and topics of interest. Use the sidebar
+              to navigate through blog categories and tags.
+            </Text>
+            <Box
+              sx={{
+                mt: 4,
+                p: 3,
+                borderRadius: "default",
+                bg: "muted",
+                boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+              }}
+            >
+              <Text as="h2" sx={{ fontSize: 4, mb: 3 }}>
+                Tags Placeholder
+              </Text>
+              <Text sx={{ fontSize: 2 }}>
+                Add dynamic tags and category filters here.
+              </Text>
+            </Box>
+          </Box>
+        </Flex>
+
+        {/* Back Button */}
+        <Flex sx={{ mt: 4, justifyContent: "center" }}>
+          <Button
+            onClick={() => navigate(-1)}
+            sx={{
+              variant: "buttons.secondary",
               cursor: "pointer",
-              "&:hover": {
-                backgroundColor: "primary",
-                color: "background",
-              },
+              "&:hover": { bg: "primary", color: "background" },
             }}
           >
             ← Back
-          </button>
-        </Box>
+          </Button>
+        </Flex>
       </Container>
     </Layout>
   )

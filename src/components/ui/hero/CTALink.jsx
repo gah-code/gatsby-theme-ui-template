@@ -7,7 +7,7 @@ const CTALink = ({ label, href, variant }) => (
     to={href}
     sx={{
       variant: `buttons.${variant}`,
-      fontSize: [1, 2],
+      fontSize: [2],
       textDecoration: "none",
       display: "inline-block",
       textAlign: "center",

@@ -11,7 +11,7 @@ const CTAButton = ({ label, onClick, variant }) => (
       textDecoration: "none",
       display: "inline-block",
       textAlign: "center",
-      px: 4,
+      px: 5,
       py: 2,
       borderRadius: 5,
       border: 0,

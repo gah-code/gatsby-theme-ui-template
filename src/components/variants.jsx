@@ -18,7 +18,7 @@ const VariantsShowcase = () => {
 
       {/* Buttons */}
       <section sx={{ mb: 5 }}>
-        <h2 sx={{ variant: "text.heading", mb: 3 }}>Buttons</h2>
+        <h3 sx={{ variant: "text.heading", mb: 3 }}>Buttons</h3>
         <button sx={{ variant: "buttons.primary" }}>Primary Button</button>
         <button sx={{ variant: "buttons.secondary", ml: 3 }}>
           Secondary Button

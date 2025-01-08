@@ -7,7 +7,7 @@ This project is a **Gatsby starter** configured with **Theme UI** to showcase cu
 ## Features
 
 - **Multi-Mode Color Themes**:
-  - Supports Light, Dark, Purple, Pink, and Forest modes.
+  - Supports Light, Dark, Purple, and Forest modes.
   - Easily switch themes using a dropdown menu.
 - **Theme UI Integration**:
   - Modular theme structure with dedicated files for colors, typography, and component variants.

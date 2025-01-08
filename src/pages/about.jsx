@@ -2,8 +2,9 @@
 import Layout from "../components/layout/Layout"
 import React from "react"
 import Section from "../components/util/Section"
-import { Box } from "theme-ui"
+import { Flex, Box } from "theme-ui"
 import Heading from "../components/util/Heading"
+import FlexLayout from "../components/layout/FlexLayout"
 
 const AboutPage = () => (
   <Layout>

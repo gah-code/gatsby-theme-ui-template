@@ -7,6 +7,7 @@ import forms from "./forms"
 import text from "./text"
 import styles from "./styles"
 import variants from "./variants"
+import messages from "./messages" // Import messages
 
 const theme = {
   config: {
@@ -24,6 +25,8 @@ const theme = {
   text, // Text styles (e.g., heading, display)
   styles, // Global styles and reset rules
   ...variants, // Component-specific variants (e.g., cards, grids, badges)
+  messages, // Add messages
+
   breakpoints: ["32em", "48em", "64em", "80em"], // Responsive design breakpoints
   sizes: {
     container: "900px", // Default width for most layouts

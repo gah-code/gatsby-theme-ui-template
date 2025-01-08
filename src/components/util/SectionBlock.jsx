@@ -51,7 +51,7 @@ const SectionBlock = ({
           as="h2"
           variant={headingVariant}
           align={align}
-          sx={{ fontSize: [4, 5, 6], mb: 3 }}
+          sx={{ fontSize: [5, 6], mb: 3 }}
         >
           {heading}
         </Heading>

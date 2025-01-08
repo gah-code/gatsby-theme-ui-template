@@ -3,15 +3,14 @@ import Showcase from "../components/showcase"
 import VariantsShowcase from "../components/variants"
 import BreakpointShowcase from "../components/BreakpointShowcase"
 import { SEO } from "../components/seo"
-import { Box, Flex, Text, Button } from "theme-ui"
+import { Box } from "theme-ui"
 import Heading from "../components/util/Heading"
 import Hero from "../components/ui/hero/Hero"
 import Section from "../components/util/Section"
 import Paragraph from "../components/util/Paragraph"
 import SectionBlock from "../components/util/SectionBlock"
-import InvertedBanner from "../components/ui/InvertedBanner"
-import Code from "../components/util/Code"
 import CodeBlock from "../components/util/CodeBlock"
+import Message from "../components/util/Message"
 
 const IndexPage = () => (
   <Layout>
@@ -41,11 +40,7 @@ const IndexPage = () => (
         <Heading as="h2" sx={{ mb: 2, color: "secondary" }}>
           Features Overview
         </Heading>
-        <Paragraph
-          sx={{
-            lineHeight: "body",
-          }}
-        >
+        <Paragraph>
           Discover the powerful features of our design system, crafted to
           empower designers and developers alike. From dynamic components to
           unified typography, our tools ensure scalability, consistency, and
@@ -54,7 +49,7 @@ const IndexPage = () => (
       </Section>
 
       <Section>
-        <Heading as="h2" sx={{ fontSize: [5, 6], mb: 2, color: "secondary" }}>
+        <Heading as="h2" sx={{ fontSize: [5, 6], mb: 2 }}>
           Multi-Mode Color Themes
         </Heading>
         <Paragraph
@@ -70,7 +65,7 @@ const IndexPage = () => (
       </Section>
 
       <Section variant="muted">
-        <Heading as="h2" sx={{ fontSize: [5, 6], mb: 2 }} useGlobal>
+        <Heading as="h2" sx={{ fontSize: [5, 6], mb: 2 }}>
           Unified Typography & Design Tokens
         </Heading>
         <Paragraph
@@ -99,6 +94,55 @@ const IndexPage = () => (
           syntax highlighting powered by Theme UI and easily swap out presets
           for a coding theme that best matches your brand.
         </Paragraph>
+      </Section>
+
+      <Section>
+        <Message>This is just a message for someone to read.</Message>
+        <Message variant="success">Operation completed successfully!</Message>
+        <Message variant="error">
+          Something went wrong! Please try again.
+        </Message>
+        <Message variant="warning">
+          Be careful! This action can't be undone.
+        </Message>
+        <Message variant="info">
+          This is some information you should know about.
+        </Message>
+        <Message
+          sx={{
+            bg: "purple",
+            color: "background",
+            fontSize: 3,
+            padding: 4,
+            borderRadius: "default",
+          }}
+        >
+          Custom styled message for special notices.
+        </Message>
+      </Section>
+
+      <Section>
+        <Heading as="h1" variant="hero">
+          Hero Heading
+        </Heading>
+        <Heading
+          as="h4"
+          variant="caps"
+          sx={{
+            color: "secondary",
+            textTransform: "uppercase",
+            fontSize: [4, 5], // Custom responsive size
+          }}
+        >
+          Custom Heading
+        </Heading>
+
+        <Heading as="h1">H1 Heading - Responsive</Heading>
+        <Heading as="h2">H2 Heading - Responsive</Heading>
+        <Heading as="h3">H3 Heading - Responsive</Heading>
+        <Heading as="h4">H4 Heading - Responsive</Heading>
+        <Heading as="h5">H5 Heading - Responsive</Heading>
+        <Heading as="h6">H6 Heading - Responsive</Heading>
       </Section>
 
       <Section>
@@ -153,45 +197,6 @@ const IndexPage = () => (
           Scenario 1: Using Global Styles Custom styles object configured for
           headings and other elements
         </Paragraph>
-      </Section>
-
-      <Section>
-        <Heading as="h1" variant="heading">
-          Theme Variant Heading
-        </Heading>
-        <Heading as="h1" variant="hero">
-          Hero Heading
-        </Heading>
-        <Heading
-          as="h4"
-          variant="caps"
-          sx={{
-            color: "secondary",
-            textTransform: "uppercase",
-            fontSize: [4, 5], // Custom responsive size
-          }}
-        >
-          Custom Heading
-        </Heading>
-
-        <Heading as="h1" useGlobal>
-          H1 Heading - Responsive
-        </Heading>
-        <Heading as="h2" useGlobal>
-          H2 Heading - Responsive
-        </Heading>
-        <Heading as="h3" useGlobal>
-          H3 Heading - Responsive
-        </Heading>
-        <Heading as="h4" useGlobal>
-          H4 Heading - Responsive
-        </Heading>
-        <Heading as="h5" useGlobal>
-          H5 Heading - Responsive
-        </Heading>
-        <Heading as="h6" useGlobal>
-          H6 Heading - Responsive
-        </Heading>
       </Section>
 
       <Section>
