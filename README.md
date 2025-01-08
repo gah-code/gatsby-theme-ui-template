@@ -1,6 +1,10 @@
+# Gatsby Theme UI Template Starter 2025 Project
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/9ae06a33-c307-45b0-87ff-c6753251fc5b/deploy-status)](https://app.netlify.com/sites/gatsby-ui-theme/deploys)
 
-# My Gatsby Theme UI Starter
+![Lighthouse Score](./src/images/lighthouse-score.png)
+
+## About
 
 This project is a **Gatsby starter** configured with **Theme UI** to showcase customizable color modes, reusable components, styled UI elements, and syntax highlighting. It includes a modular theme structure with reusable configurations for colors, typography, spacing, and more.
 
