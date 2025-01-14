@@ -72,58 +72,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   })
 }
 
-// const path = require("path")
-// const { createFilePath } = require("gatsby-source-filesystem")
-
-// exports.onCreateNode = ({ node, actions, getNode }) => {
-//   const { createNodeField } = actions
-
-//   if (node.internal.type === "Mdx") {
-//     const slug = createFilePath({ node, getNode, basePath: "posts" })
-//     createNodeField({
-//       node,
-//       name: "slug",
-//       value: slug,
-//     })
-//   }
-// }
-
-// exports.createPages = async ({ graphql, actions, reporter }) => {
-//   const { createPage } = actions
-//   const result = await graphql(`
-//     query {
-//       allMdx {
-//         nodes {
-//           id
-//           frontmatter {
-//             slug
-//           }
-//           internal {
-//             contentFilePath
-//           }
-//         }
-//       }
-//     }
-//   `)
-
-//   if (result.errors) {
-//     reporter.panicOnBuild("Error loading MDX posts", result.errors)
-//     return
-//   }
-
-//   const posts = result.data.allMdx.nodes
-
-//   posts.forEach(post => {
-//     createPage({
-//       path: `/posts/${post.frontmatter.slug}`,
-//       component: `${path.resolve(
-//         "./src/templates/post.jsx"
-//       )}?__contentFilePath=${post.internal.contentFilePath}`,
-//       context: { id: post.id },
-//     })
-//   })
-// }
-// gatsby-node.js
 exports.createPages = async ({ actions }) => {
   const { createPage } = actions
 

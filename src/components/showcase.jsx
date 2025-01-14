@@ -1,22 +1,4 @@
 /** @jsxImportSource theme-ui */
-// import { Grid } from "../components/Grid"
-// import theme from "../gatsby-plugin-theme-ui"
-// import { Grid, Box } from "theme-ui"
-
-// const Grid = {
-//   grids: {
-//     default: {
-//       display: "grid",
-//       gap: 3,
-//       gridTemplateColumns: "repeat(2, 1fr)",
-//     },
-//     responsive: {
-//       display: "grid",
-//       gap: [2, 3],
-//       gridTemplateColumns: ["1fr", "repeat(2, 1fr)", "repeat(4, 1fr)"],
-//     },
-//   },
-// }
 
 import { Box, Text } from "theme-ui"
 import Heading from "./util/Heading"

@@ -28,59 +28,93 @@ This project is a **Gatsby starter** configured with **Theme UI** to showcase cu
 
 ---
 
-## Folder Structure
+## Project Folder Structure
+
+The following is the folder structure of the project:
 
 ```plaintext
 gatsby-theme-ui-template/
-├── gatsby-config.js        # Updated to source MDX posts from `/src/posts/`
-├── gatsby-node.js          # Dynamically creates individual post pages
+├── gatsby-config.js               # Configuration for Gatsby plugins
+├── gatsby-node.js                 # Handles dynamic page creation
 ├── src/
-│   ├── pages/
-│   │   ├── index.jsx        # Homepage
-│   │   ├── posts.jsx        # Post listing page
-│   │   ├── about.jsx        # About page
-│   │   ├── showcase.jsx     # Theme showcase page
-│   │   ├── page-2.jsx       # Additional example page
-│   │   ├── using-dsg.jsx    # Deferred Static Generation example page
-│   │   ├── using-ssr.jsx    # Server-Side Rendering example page
-│   │   ├── using-typescript.tsx # TypeScript example page
-│   └── 404.jsx              # Custom 404 page
+│   ├── pages/                     # Pages for the website
+│   │   ├── index.jsx              # Homepage
+│   │   ├── posts.jsx              # Post listing page
+│   │   ├── about.jsx              # About page
+│   │   ├── showcase.jsx           # Theme showcase page
+│   │   ├── 404.js                 # Custom 404 page
+│   │   ├── GridVariantsPage.jsx   # Grid layout examples
+│   │   ├── TypographyDemoPage.jsx # Typography showcase
+│   │   └── posts/                 # MDX blog posts
+│   │       ├── my-first-post.mdx
+│   │       ├── mdx-with-theme-ui.mdx
+│   │       ├── dynamic-heading-components.mdx
+│   │       ├── welcome-to-colorful-posts.mdx
+│   │       └── enhancing-dynamic-pages-with-seo-metadata-in-gatsby.mdx
 │
-│   ├── posts/               # MDX blog posts
-│   │   ├── analyzing-reddit-comments-with-python.mdx
-│   │   ├── mdx-with-theme-ui.mdx
-│   │   ├── my-first-post.mdx
+│   ├── templates/                 # Page templates
+│   │   ├── using-dsg.js           # Deferred Static Generation example
+│   │   ├── post.jsx               # Single post template
+│   │   └── posts-page.jsx         # Post listing template
 │
-│   ├── templates/           # Templates for dynamically created pages
-│   │   └── post.jsx         # Individual post template
-│
-│   ├── components/          # Reusable components
-│   │   ├── Layout.jsx       # Shared layout for all pages
-│   │   ├── Header.jsx       # Page header
-│   │   ├── Footer.jsx       # Page footer
-│   │   ├── ColorModeToggle.jsx # Theme UI color mode switcher
-│   │   ├── __tests__/       # Jest tests for components
+│   ├── components/                # Reusable components
+│   │   ├── header.jsx             # Main header component
+│   │   ├── ColorModeToggle.jsx    # Theme color mode toggle
+│   │   ├── variants.jsx           # Variant examples
+│   │   ├── ResponsiveTwoColumnGrid.jsx # Responsive grid layout
+│   │   ├── BreakpointShowcase.jsx # Debug breakpoints visually
+│   │   ├── seo.jsx                # SEO metadata component
+│   │   ├── demos/                 # Demo components
+│   │   │   └── demoOne.jsx
+│   │   ├── __tests__/             # Jest tests
 │   │   │   └── Layout.test.js
+│   │   ├── layout/                # Layout components
+│   │   │   ├── Layout.jsx
+│   │   │   ├── FlexLayout.jsx
+│   │   │   └── GlobalStyles.jsx
+│   │   ├── util/                  # Utility components
+│   │   │   ├── CodeBlock.jsx
+│   │   │   ├── Message.jsx
+│   │   │   ├── Paragraph.jsx
+│   │   │   ├── SectionBlock.jsx
+│   │   │   ├── Heading.js
+│   │   │   └── Section.jsx
+│   │   ├── ui/                    # UI-specific components
+│   │   │   ├── Header.jsx
+│   │   │   ├── Footer.jsx
+│   │   │   ├── Main.jsx
+│   │   │   ├── Navigation.jsx
+│   │   │   └── hero/
+│   │   │       └── InvertedBanner.js
 │
-│   ├── gatsby-plugin-theme-ui/
-│   │   ├── colors.js        # Colors and color modes
-│   │   ├── typography.js    # Fonts, sizes, weights, line heights
-│   │   ├── space.js         # Spacing (margins, paddings)
-│   │   ├── radii.js         # Border radius styles
-│   │   ├── buttons.js       # Button styles and variants
-│   │   ├── forms.js         # Form styles (inputs, selects, etc.)
-│   │   ├── text.js          # Text variants
-│   │   ├── variants.js      # Component variants (e.g., cards, badges)
-│   │   ├── styles.js        # Global styles (root, headings, links, etc.)
-│   │   └── index.js         # Combines all theme files into a single export
+│   ├── gatsby-plugin-theme-ui/    # Theme UI configuration
+│   │   ├── radii.js               # Border radii
+│   │   ├── typography.js          # Typography settings
+│   │   ├── colors.js              # Color palette
+│   │   ├── space.js               # Spacing scale
+│   │   ├── forms.js               # Form styles
+│   │   ├── syntax.js              # Syntax highlighting
+│   │   ├── styles.js              # Global styles
+│   │   ├── messages.js            # Message styles
+│   │   ├── text.js                # Text variants
+│   │   ├── buttons.js             # Button variants
+│   │   ├── variants.js            # Component variants
+│   │   └── index.js               # Main theme export
 │
-│   └── styles/
-│       ├── global.css       # Global CSS resets and overrides
-│       └── utils.css        # Utility classes for quick styling
+│   ├── styles/                    # Global CSS styles
+│   │   ├── global.css
+│   │   └── utils.css
 │
-└── static/                  # Static assets (images, icons, etc.)
-
-```
+│   ├── images/                    # Image assets
+│   │   ├── lighthouse-score.png
+│   │   ├── gatsby-icon.png
+│   │   └── example.png
+│
+│   ├── utils/                     # Utility scripts
+│   │   └── colorMode.js
+│
+│   ├── hooks/                     # Custom React hooks
+│   │   └── use-site-metadata.jsx
 
 ---
 
