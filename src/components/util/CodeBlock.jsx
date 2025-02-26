@@ -33,25 +33,6 @@ const CodeBlock = ({
       }}
       {...props}
     >
-      {/* Language Label - Positioned Top Left */}
-      {/* <Text
-        sx={{
-          position: "absolute",
-          top: "8px",
-          left: "8px",
-          fontSize: 1,
-          fontWeight: "bold",
-          textTransform: "uppercase",
-          color: "secondary",
-          bg: "muted",
-          px: 2,
-          py: 1,
-          borderRadius: "default",
-        }}
-      >
-        {language}
-      </Text> */}
-
       {/* Copy Button - Positioned Top Right */}
       {showCopy && (
         <Button

@@ -297,4 +297,213 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-Enjoy building with Gatsby and Theme UI! If you have any questions or feedback, feel free to open an issue or create a pull request. Happy coding!
+## NEXT STEPS
+
+# 📖 Storybook Setup Guide
+
+## 🚀 Introduction
+
+This guide outlines how to integrate **Storybook** into your **Gatsby + Theme UI** project, providing a structured approach to documenting and showcasing UI components, design tokens, and styling principles.
+
+## 📁 Recommended Folder Structure
+
+```
+my-gatsby-theme-ui-project/
+├── .storybook/
+│   ├── main.js         # Storybook entry configuration
+│   ├── preview.js      # Global decorators, parameters, theming
+│   └── manager.js      # (optional) Custom Storybook UI
+│
+├── src/
+│   ├── components/
+│   │   ├── Button/
+│   │   │   ├── Button.jsx
+│   │   │   └── Button.stories.jsx
+│   │   ├── ColorModeToggle/
+│   │   │   ├── ColorModeToggle.jsx
+│   │   │   └── ColorModeToggle.stories.jsx
+│   │   ├── layout/
+│   │   │   └── FlexLayout.jsx
+│   │   ├── ui/
+│   │   │   └── InvertedBanner.js
+│   │   └── ...
+│   │
+│   └── stories/
+│       ├── Intro.stories.mdx         # Project introduction
+│       ├── Colors.stories.mdx        # Showcases brand colors & modes
+│       ├── Typography.stories.mdx    # Demonstrates text styles
+│       └── Tokens.stories.mdx        # Displays spacing, radii, etc.
+│
+├── src/gatsby-plugin-theme-ui/
+│   ├── index.js         # Main theme export
+│   ├── colors.js
+│   ├── typography.js
+│   ├── variants.js
+│   └── ...
+│
+├── package.json
+└── ...
+```
+
+## 🔧 Step-by-Step Setup
+
+### 1️⃣ Install and Initialize Storybook
+
+```sh
+npx sb init
+# Or with Yarn:
+yarn dlx sb init
+```
+
+### 2️⃣ Configure `.storybook/main.js`
+
+```js
+module.exports = {
+  stories: [
+    "../src/stories/**/*.stories.@(js|jsx|ts|tsx|mdx)",
+    "../src/components/**/*.stories.@(js|jsx|ts|tsx|mdx)"
+  ],
+  addons: [
+    "@storybook/addon-links",
+    "@storybook/addon-essentials",
+  ],
+}
+```
+
+### 3️⃣ Configure `.storybook/preview.js`
+
+```js
+import React from "react"
+import { ThemeUIProvider } from "theme-ui"
+import theme from "../src/gatsby-plugin-theme-ui"
+
+export const decorators = [
+  (Story) => (
+    <ThemeUIProvider theme={theme}>
+      <Story />
+    </ThemeUIProvider>
+  ),
+]
+
+export const parameters = {
+  actions: { argTypesRegex: "^on[A-Z].*" },
+  controls: { expanded: true },
+}
+```
+
+### 4️⃣ Add Foundational Stories
+
+#### 🟣 `Colors.stories.mdx`
+
+```mdx
+# 🎨 Colors & Modes
+
+```jsx
+import { Box, Text, useColorMode } from 'theme-ui';
+
+export const ColorSwatches = () => {
+  const [colorMode, setColorMode] = useColorMode();
+
+  return (
+    <Box>
+      <button onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')}>Toggle Mode</button>
+      <Box sx={{ display: 'grid', gridGap: 3 }}>
+        {Object.entries(theme.colors).map(([name, value]) => (
+          typeof value === 'string' && (
+            <Box key={name} sx={{ bg: value, p: 3 }}>
+              <Text sx={{ color: 'background' }}>{name}</Text>
+            </Box>
+          )
+        ))}
+      </Box>
+    </Box>
+  );
+};
+```
+
+#### 🔤 `Typography.stories.mdx`
+
+```mdx
+# 🔡 Typography
+
+```jsx
+import { Box, Text } from 'theme-ui';
+
+export const TypographyShowcase = () => (
+  <Box>
+    <h1>Heading H1</h1>
+    <h2>Heading H2</h2>
+    <Text sx={{ variant: 'paragraph' }}>This is a paragraph.</Text>
+  </Box>
+);
+```
+
+#### 🎛️ `Tokens.stories.mdx`
+
+```mdx
+# 🏗️ Design Tokens
+
+```jsx
+import { Box, Text } from 'theme-ui';
+
+export const Spacing = () => (
+  <Box>
+    {theme.space.map((val, i) => (
+      <Box key={i}>
+        <Text>Space {i}: {val}px</Text>
+        <Box sx={{ height: val, bg: 'muted' }} />
+      </Box>
+    ))}
+  </Box>
+);
+```
+
+### 5️⃣ Add Component Stories
+
+#### 🛑 `Button.stories.jsx`
+
+```js
+import Button from "./Button"
+
+export default {
+  title: "Components/Button",
+  component: Button,
+}
+
+const Template = (args) => <Button {...args} />
+
+export const Primary = Template.bind({})
+Primary.args = {
+  variant: "primary",
+  children: "Primary Button",
+}
+```
+
+### 6️⃣ Run Storybook
+
+```sh
+npm run storybook
+# or
+yarn storybook
+```
+
+Open [http://localhost:6006](http://localhost:6006) to view your Storybook.
+
+## 📌 Additional Enhancements
+
+- **MDX vs. JSX:** Use `.mdx` for documentation-like stories, `.stories.jsx` for prop-driven demos.
+- **Add-Ons:** Consider `storybook-addon-performance` for optimization.
+- **Theming:** Customize `.storybook/manager.js` for brand alignment.
+- **Deployment:** Run `npm run build-storybook` to generate a static build for Netlify/GitHub Pages.
+
+---
+
+### 🎉 Recap
+
+✅ Initialize Storybook with `sb init`  
+✅ Configure `.storybook` settings for Gatsby + Theme UI  
+✅ Create foundational stories (`Colors`, `Typography`, `Tokens`)  
+✅ Add component-specific stories (`Button`, `Toggle`, etc.)  
+✅ Run `npm run storybook` and enjoy your UI documentation!
+
+---

@@ -1,9 +1,6 @@
 /** @jsxImportSource theme-ui */
 
 import { Box, Text } from "theme-ui"
-import Heading from "./util/Heading"
-import Section from "./util/Section"
-// import theme from "../gatsby-plugin-theme-ui"
 
 const TypographyShowcase = () => (
   <section>
